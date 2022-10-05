@@ -1,5 +1,7 @@
 const mongoose =require('mongoose');
 
+
+//create user schema
 const userSchema =mongoose.Schema({
 
     
@@ -19,6 +21,10 @@ const userSchema =mongoose.Schema({
     
 
 },{timestamps:true})
+
+
+
+
 
 
 module.exports=mongoose.model('User',userSchema)
