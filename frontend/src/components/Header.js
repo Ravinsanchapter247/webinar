@@ -12,8 +12,8 @@ function Header() {
   return (
     <HeaderContainer>
         <HeaderLeft>
-            <img src="/images/logo.png" alt="" 
-              style={{height:40,width:60}}
+            <img src="/images/logo3.jpg" alt="" 
+              style={{height:40,width:80,padding:10}}
             />
         </HeaderLeft>
 
@@ -45,7 +45,7 @@ background-color:black;
    width:100%;
    align-items:center;
     
-   padding:10px 0;
+   padding:0px 0;
    border-bottom: 0.1px solid gray;
    
 
@@ -56,6 +56,7 @@ const HeaderLeft=styled.div`
   
   >img{
     padding:5px;
+    
   }
 `
 
@@ -90,6 +91,10 @@ border-right: 0.1px solid gray;
       color:black;
       font-size:20px;
       
+      &:hover{
+        background-color:gray;
+        color:white;
+      }
   }
 
 `
