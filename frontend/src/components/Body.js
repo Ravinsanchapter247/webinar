@@ -5,8 +5,9 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import { useSelector,useDispatch } from 'react-redux';
 import {selectPageName} from './features/pageSlice'
 
+
 function Body() {
-   
+  
     const page =useSelector(selectPageName)
   return (
     <BodyContainer>

@@ -10,14 +10,18 @@ import Products from './components/Products';
 import Subscripe from './components/Subscripe';
 import Body from './components/Body';
 import GiftCard from './components/GiftCard';
+import { useSelector } from 'react-redux';
+import {selectPageName} from './components/features/pageSlice'
 
 function App() {
+
+  const name = useSelector(selectPageName)
   return (
     <div className="app">
       <Router>
       <Header/>
       <AppBody>
-      <Sidebar />
+      {name!=='GiftCard' ?<Sidebar />:null}
       <Body />
       <Routes>
       
