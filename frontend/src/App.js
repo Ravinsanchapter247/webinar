@@ -2,26 +2,45 @@
 import './App.css';
 import Header from './components/Header';
 import {BrowserRouter as Router,Routes,Route} from'react-router-dom';
+import styled from 'styled-components'
 import Sidebar from './components/Sidebar';
+import Webinars from './components/Webinars';
+import UpcommingWebinars from './components/UpcommingWebinars';
+import Products from './components/Products';
+import Subscripe from './components/Subscripe';
+import Body from './components/Body';
+import GiftCard from './components/GiftCard';
 
 function App() {
   return (
     <div className="app">
       <Router>
       <Header/>
+      <AppBody>
       <Sidebar />
+      <Body />
       <Routes>
       
-        <Route>
-
-        </Route>
+        <Route path='/' element={<Webinars page='Webinars'/>} />
+        <Route path='/upcommingwebinars' element={<UpcommingWebinars page='upcommingwebinars' />} />
+        <Route path='/products' element={<Products  page='products'/>}  />
+        <Route path='/giftcards' element={<GiftCard  page='GiftCard'/>}  />
+        <Route path='/subscripe' element={<Subscripe page='subscripe'/>} />
+       
      //header
      //sidebar
      //body
      </Routes>
+     </AppBody>
      </Router>
     </div>
   );
 }
 
 export default App;
+
+
+const AppBody = styled.div`
+display:flex;
+flex:1;
+`;

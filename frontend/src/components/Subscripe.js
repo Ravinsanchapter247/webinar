@@ -1,6 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-function Subscripe() {
+import { useDispatch } from 'react-redux';
+import {addPage} from './features/pageSlice'
+
+
+ 
+  //const [name,setName] =useState('')
+ 
+function Subscripe({page}) {
+
+  const dispatch =useDispatch();
+
+  useEffect( () =>{
+
+
+
+    dispatch(
+
+      addPage({
+        name:page
+      })
+    )
+  }
+  
+ 
+  
+  )
   return (
     <SubscripeContainer>Subscripe</SubscripeContainer>
   )

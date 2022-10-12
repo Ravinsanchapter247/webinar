@@ -21,8 +21,10 @@ const SidebarContainer= styled.div`
 background-color:black;
 margin-top:60px;
 color:white;
+
 flex:0.3;
 max-width:250px;
 border-top:1px solid #49274b ;
-
+overflowY: 'scroll',
+ 
 `

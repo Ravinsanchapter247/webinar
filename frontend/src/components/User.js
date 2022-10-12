@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { borderLeft } from '@mui/system';
 function User() {
   return (
     <UserContainer>

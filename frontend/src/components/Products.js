@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux';
+import {addPage} from './features/pageSlice'
 
-function Products() {
+
+ 
+  //const [name,setName] =useState('')
+  
+
+function Products({page}) {
+
+  const dispatch =useDispatch();
+
+  useEffect( () =>{
+
+
+
+    dispatch(
+
+      addPage({
+        name:page
+      })
+    )
+  }
+  
+ 
+  
+  )
   return (
     <ProductContainer>Products</ProductContainer>
   )
