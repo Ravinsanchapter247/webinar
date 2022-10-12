@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import  styled  from "styled-components";
+import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import {addPage} from './features/pageSlice'
+function UpcommingWebinars({page}) {
 
-function GiftCard({page}) {
-    const dispatch =useDispatch();
-
+  const dispatch =useDispatch();
+  //const [name,setName] =useState('')
   useEffect( () =>{
 
 
@@ -21,57 +21,137 @@ function GiftCard({page}) {
  
   
   )
+
+  console.log('page:',page)
   return (
     <Container>
-        <Content>
-        <GiftCardContainer>
-         <img src='images/giftcard.jpg' alt='Gift Card' style={{height:'200px',width:'200px'}}/>
-        </GiftCardContainer>
-        <GiftCardForm>
-        <p>The Perfect Gift</p>
-        <Amount>
-
-        </Amount>
-        </GiftCardForm>
-        </Content>
+      
+ 
+    <WebinarsContainer>
+      <HeaderContainer>
+    {/* <HomeIcon /> */}
+    </HeaderContainer>
+      <img
+       src='images/giftcard.jpg'
+        alt='Gift Cards' 
+         
+        style={{height:'200px', width:'200px'}}
+        
+        />
+       
+       
+    </WebinarsContainer>
+    
     </Container>
   )
 }
 
-export default GiftCard
+export default UpcommingWebinars
 
-const Container = styled.div`
-//position: relative;
-height:100vh;
-   //padding:20px 50px;
- 
- //margin:auto;
-  width:100%;
+const Container =styled.div`
+  width: 100%;
   display:flex;
-  color:white;
-   flex:0.7;
-  flex-grow:1;
+  flex-direction: column;
+  margin-top:50px;
+  height: 100%;
+  background-color:black !important;
+  
+`;
+
+const Contain =styled.div`
+ margin-top:50px;
  
-  background-color:#1C1D1C;
+`
+
+const HeaderContainer =styled.div`
+   margin-top:50px;
+   //padding-left:70px
+`;
+
+const WebinarsContainer=styled.div`
+ 
+   height:100vh;
+   
+ background-color:gray;
+  
+  display:column;
+  color:white;
+  flex:0.7;
+ flex-grow:1;
    overflow-y:scroll ;
  
-`;
+     
+  
+  //justify-content:center;
+  // display:grid;
+  // grid-gap:5px;
+  // gap:5px;
+  // grid-template-columns:repeat(5,minmax(0,1fr));
+
+  @media(max-width: 768px){
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
  
-const Content =styled.div`
+`
+
+const WebinarCardContainer =styled.div`
+ 
+//border-radius: 15px;
+//padding:25px;
+display:flex;
+width:90%;
+margin-left:40px;
+margin-top:20px;
+display:grid;
+  grid-gap:0px;
+  gap:0px;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+
+`;
+
+const WebinarCard =styled.div`
+border:0.5px solid lightgray;
+border-radius:3px;
+box-shadow:rgb(0 0 0 / 69%)0px 26px 30px -10px,
+     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+width:170px;
+//align-items:center;
+margin-bottom:20px;
+
+>hr{
+  border:0.5px solid gray;
+}
+`
+
+const WebinarImage =styled.div`
+ 
+
+ 
+`
+
+const Description =styled.div`
+padding:10px;
  background-color:black;
- display:flex;
- height:150px;
+ font-size:11px;
+ font-family:Roboto;
+ font-weight:700;
 `
-const GiftCardContainer =styled.div`
 
- //position:absolute;
-`;
-
-const Amount =styled.div`
-
-`;
-const GiftCardForm = styled.div`
-    margin-top:100px;
+const ImageInfo =styled.div` 
+    background-color:black;
     padding:10px;
+    border-radius:3px;
+    // font-weight:500;
    
-`
+    h6:first-of-type {
+      color:green;
+      font-style: italic;
+
+    }
+
+    h6:nth-of-type(2) {
+      font-weight: bold;
+      font-size:9px;
+    }
+    
+`;
