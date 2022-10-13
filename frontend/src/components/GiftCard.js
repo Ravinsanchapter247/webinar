@@ -39,6 +39,24 @@ function UpcommingWebinars({page}) {
 
         <Amount>
             <p>The Perfect Gift</p>
+            <TextBox>
+             <input type='text' name='amount'  placeholder='Quantity' />
+             <SubAmount>
+               {/* <p>Enter your amount</p> */}
+             <input type='text' name='amount' placeholder='Enter Amount' />
+             </SubAmount>
+            
+            </TextBox>
+            <RecepientEmail>
+            <p>Recepient Email</p>
+            <input type='text' placeholder='john@example.com' />
+
+            </RecepientEmail>
+            <Bottom>
+              <p>Minimun Amount:1</p>
+              <p>Maximum Amount:5000</p>
+              <button>AddToCard</button>
+            </Bottom>
         </Amount>
        
        
@@ -93,12 +111,73 @@ const Dummy =styled.div`
      flex:0.3;
 `;
 
+const TextBox =styled.div`
+   display:flex;
+   input:first-of-type{
+
+    width:50px;
+    font-size:10px;
+
+   }
+
+  //  input:nth-of-type(2){
+  //   border:none;
+  //   outline:none;
+   
+  //  }
+`;
+
+const SubAmount =styled.div`
+   padding:0 50px;
+   border:1px solid gray;
+   background-color:white;
+   margin-left:10px;
+   >p{
+    font-size:8px;
+    margin-top:-8px;
+   }
+     
+   >input{
+    border:none;
+    outline:none;
+     padding:0 20px;
+    
+    background-color:black;
+   }
+`;
+
+const Bottom=styled.div`
+ font-size:12px;
+ margin-top:10px;
+
+ >button{
+  margin-top:10px;
+  background-color:white;
+  color:black;
+  border:1px solid lightgray;
+  padding:5px;
+  font-weight:bold;
+ }
+`;
+const RecepientEmail =styled.div`
+ margin-top:10px;
+ >p{
+  font-size:13px;
+ }
+`;
+
 const Amount =styled.div`
-padding:40px;
-width:250px;
-height:120px;
+padding:10px;
+width:300px;
+height:180px;
 border:1px solid rgba(255,255,255,0.5);
 margin-left:10px;
+
+>p{
+  margin-bottom:10px;
+  color:#2E5B83;
+
+}
 `;
 
 
