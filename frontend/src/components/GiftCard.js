@@ -147,7 +147,7 @@ const SubAmount =styled.div`
 `;
 
 const Bottom=styled.div`
- font-size:12px;
+ font-size:11px;
  margin-top:10px;
 
  >button{

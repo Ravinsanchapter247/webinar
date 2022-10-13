@@ -21,8 +21,8 @@ function App() {
       <Router>
       <Header/>
       <AppBody>
-      {name!=='GiftCard' ?<Sidebar />:null}
-      <Body />
+      {name!=='GiftCard' && name!=='subscripe' ?<Sidebar />:null}
+     {name !=='subscripe' ?<Body />:null} 
       <Routes>
       
         <Route path='/' element={<Webinars page='Webinars'/>} />
