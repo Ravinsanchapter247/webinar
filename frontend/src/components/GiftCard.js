@@ -33,19 +33,32 @@ function UpcommingWebinars({page}) {
        src='images/giftcard.jpg'
         alt='Gift Cards' 
          
-        style={{height:'200px', width:'200px'}}
+        style={{height:'350px', width:'350px'}}
         
         />
 
         <Amount>
             <p>The Perfect Gift</p>
             <TextBox>
-             <input type='text' name='amount'  placeholder='Quantity' />
+             {/* <input type='text' name='amount'  placeholder='Quantity' /> */}
              <SubAmount>
+             <form>
+             
+             <input type='text' />
                {/* <p>Enter your amount</p> */}
-             <input type='text' name='amount' placeholder='Enter Amount' />
+             {/* <input type='number' name='amount' placeholder='Enter Amount' /> */}
+              <div>
+             <label style={{color:'black'}}>Enter Amount</label>
+             <input type='number' name='amount' />
+             </div>
+             </form>
              </SubAmount>
             
+            
+             
+              
+             
+           
             </TextBox>
             <RecepientEmail>
             <p>Recepient Email</p>
@@ -74,7 +87,8 @@ const Container =styled.div`
 
   margin-top:50px;
   height: 100vh;
-  background-color:#1C1D1C !important;
+  background-color:#F4F3F1 !important;
+  //margin: 0 auto;
   
 `;
 
@@ -82,9 +96,9 @@ const Container =styled.div`
 
 const WebinarsContainer=styled.div`
  
-   height:38vh;
+   height:68vh;
    
- background-color:black;
+ background-color:#FFFFFF;
   //margin-top:50px;
   padding-left:50px;;
   padding-top:50px;
@@ -94,12 +108,13 @@ const WebinarsContainer=styled.div`
 //   flex:0.7;
 //  flex-grow:1;
    overflow-y:scroll ;
- 
-     width:45vw;
+    align-items:center;
+    justify-content:center;
+     width:75vw;
      overflow-y: hidden;
      align-items:center;
     
-     
+     margin: 0 auto;
   
   @media(max-width: 768px){
     grid-template-columns:repeat(2,minmax(0,1fr))
@@ -109,15 +124,17 @@ const WebinarsContainer=styled.div`
 
 const Dummy =styled.div`
      flex:0.3;
+     height:100vh;
 `;
 
 const TextBox =styled.div`
    display:flex;
-   input:first-of-type{
-
-    width:50px;
+  > input:first-of-type{
+      padding:10px;
+    //width:100%;
     font-size:10px;
-
+     width:50px;
+     
    }
 
   //  input:nth-of-type(2){
@@ -128,22 +145,41 @@ const TextBox =styled.div`
 `;
 
 const SubAmount =styled.div`
-   padding:0 50px;
-   border:1px solid gray;
-   background-color:white;
-   margin-left:10px;
-   >p{
-    font-size:8px;
-    margin-top:-8px;
-   }
+  // padding:5px;
+   //border:1px solid gray;  //no
+  // border-radius:5px;
+   //background-color:white;  //no
+  // margin-left:10px;
+ //  align-items:center;
+  // width:150px;
+   
+  //  >p{         
+  //   font-size:58px;
+  //   margin-top:-8px;     //no
+  //  }
      
    >input{
-    border:none;
-    outline:none;
-     padding:0 20px;
-    
-    background-color:black;
+    // border:none;          // 1 2 no
+    // outline:none;
+    //padding:0 10px;
+    // width:150px;
+     //height:32px;
+     //border-radius:5px;
+   //background-color:black;  //no
+   //font-size:15px;
+
+
+
+
+  
+ 
    }
+
+  // input::placeholder {
+  //   color: red;
+  //   font-size: 1.2em;
+  //   font-style: italic;
+  // }
 `;
 
 const Bottom=styled.div`
@@ -167,15 +203,16 @@ const RecepientEmail =styled.div`
 `;
 
 const Amount =styled.div`
-padding:10px;
-width:300px;
-height:180px;
-border:1px solid rgba(255,255,255,0.5);
+padding:20px;
+width:450px;
+height:300px;
+border:1px solid #CCCCCC;
 margin-left:10px;
 
 >p{
   margin-bottom:10px;
-  color:#2E5B83;
+  color:#495B83;
+  font-size:25px;
 
 }
 `;

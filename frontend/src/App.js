@@ -13,6 +13,7 @@ import GiftCard from './components/GiftCard';
 import { useSelector } from 'react-redux';
 import {selectPageName} from './components/features/pageSlice'
 import Footer from './components/Footer';
+import NewGift from './components/NewGift';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
         <Route path='/' element={<Webinars page='Webinars'/>} />
         <Route path='/upcommingwebinars' element={<UpcommingWebinars page='upcommingwebinars' />} />
         <Route path='/products' element={<Products  page='products'/>}  />
-        <Route path='/giftcards' element={<GiftCard  page='GiftCard'/>}  />
+        <Route path='/giftcards' element={<NewGift  page='GiftCard'/>}  />
         <Route path='/subscripe' element={<Subscripe page='subscripe'/>} />
        
      //header
