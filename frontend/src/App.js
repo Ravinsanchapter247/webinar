@@ -12,6 +12,7 @@ import Body from './components/Body';
 import GiftCard from './components/GiftCard';
 import { useSelector } from 'react-redux';
 import {selectPageName} from './components/features/pageSlice'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -35,7 +36,9 @@ function App() {
      //sidebar
      //body
      </Routes>
+     
      </AppBody>
+     <Footer />
      </Router>
     </div>
   );
