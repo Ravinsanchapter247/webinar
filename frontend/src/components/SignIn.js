@@ -9,12 +9,13 @@ import IconButton from '@mui/material/IconButton';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { addSubscripe } from './features/subscripeSlice';
+import { addSignIn } from './features/signInSlice';
 
 
  
   //const [name,setName] =useState('')
  
-function Subscripe({page}) {
+function SignIn({page}) {
 
   const dispatch =useDispatch();
 
@@ -37,7 +38,7 @@ function Subscripe({page}) {
   const handleClick = () =>{
 
     dispatch(
-      addSubscripe({
+      addSignIn({
         popup:false
       })
     )
@@ -56,26 +57,23 @@ function Subscripe({page}) {
    </CloseImg>
 </SubscripeHeader>
 <SubscripeBody>
- <h6>Subscripe</h6> 
- <p>Be the first to know about our promotions, sales and discounts</p>
+    <Email>
+ <p>Email*</p> 
+ <input type="email" name="email" placeholder="john@Example.com" />
+ </Email>
+
+ <Email>
+    <TextBox>
+ <p style={{flex:1}}>password*</p> 
+ <p>Forget Password?</p>
+ </TextBox>
+ <input type="password" name="email" placeholder="****" />
+ </Email>
+ <button>Login</button>
 </SubscripeBody>
 <SubscripeBottom>
-<input type='text' name='amount'  placeholder='Enter your email...' />
-<IconButton
+<p>Don't have an account?<span>Sign Up</span></p>
  
- sx={{
-  width:'50px',
-  height:'40px',
-  borderRadius: 0,
-  border: "1px solid",
-  borderColor: "primary.main",
-  marginLeft: "10px",
-}}
-
->
- <AddIcon sx={{ fontSize: "30px" ,color:'white'}}/>
-</IconButton>
-
 </SubscripeBottom>
 </SubscripeMenu>
 </SubscripeContainer>
@@ -86,7 +84,7 @@ function Subscripe({page}) {
   )
 }
 
-export default Subscripe
+export default SignIn
 
 const SubscripeContainer=styled.div`
     
@@ -101,10 +99,10 @@ const SubscripeContainer=styled.div`
 `
 
 const SubscripeMenu =styled.div`
-height:250px;
+height:400px;
 width:500px;
 background-color:white;
- top:150px;
+ top:80px;
 left:0;
 right:0;
 margin:auto;
@@ -131,11 +129,12 @@ const CloseImg =styled.div`
 
 const SubscripeBody =styled.div`
 
-    font-size:40px;
-    margin-top:20px;
-    font-weight:100;
-    display:grid;
-     place-items:center;
+    font-size:15px;
+   // margin-top:10px;
+    font-weight:400;
+    padding:40px;
+    // display:grid;
+    //  place-items:center;
 
      >p{
       margin-top:10px;
@@ -144,35 +143,68 @@ const SubscripeBody =styled.div`
      }
 
 
-
+>button{
+    width:435px;
+    height:40px;
+    margin-top:20px;
+    font-size:15px;
+    disabled:true;
+    border:none;
+    color:white;
+    background-color:rgb(191, 187, 187);
+    font-weight:bold;
+   
+}
     
 `
+
+const Email =styled.div`
+  >input{
+    width:400px;
+    height:5px;
+    padding:15px;
+    border:1px solid #DEE2E6;
+   
+    ::placeholder{
+        font-size:15px;
+    }
+
+    &:hover {
+        border:2px solid #9DC0FA;
+        outline:2px solid #9DC0FA;
+    }
+  }
+    >p{
+        font-family:Roboto;
+    }
+  margin-top:15px;
+`;
+
+const TextBox =styled.div`
+    display:flex;
+    >p{
+        font-family:Roboto;
+    }
+`;
 
 const SubscripeBottom =styled.div`
 
 display:flex;
 align-items:center;
-margin-left:70px;
-margin-top:40px;
-// display:grid;
-//      place-items:center;
+margin-left:110px;
+margin-top:-30px;
+>p{
+    color:#4B5563;
+    
+}
+>p>span{
+    font-weight:bold;
 
- >input{
-  padding:10px 60px;
-  text-align:start;
-  font-size:15px;
-  color:#A8A2A4;
- }
+    &:hover {
+        color:#6586A2;
+        text-decoration:underline;
+    }
+}
 
-
-
- >.MuiIconButton-root{
-  padding:7px;
-  
- background-color:black;
- &:hover{
-  background-color:gray;
- }
- }
 `
 

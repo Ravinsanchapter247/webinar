@@ -1,64 +1,160 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
-import {addPage} from './features/pageSlice'
-function NewGift({page}) {
+import { addPage } from './features/pageSlice'
+import AddIcon from '@mui/icons-material/Add';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { borderRadius } from '@mui/system';
+import { selectPageName } from './features/pageSlice';
+import { useSelector } from 'react-redux';
 
-  const dispatch =useDispatch();
+function NewGift({ page }) {
+
+  const dispatch = useDispatch();
   //const [name,setName] =useState('')
-  useEffect( () =>{
+  useEffect(() => {
 
 
 
     dispatch(
 
       addPage({
-        name:page
+        name: page
       })
     )
   }
-  
- 
-  
+
+
+
   )
 
-  console.log('page:',page)
+  const active =useSelector(selectPageName)
+
+  console.log('page:', page)
   return (
-    <Container>
+    <Container >
       <Dummy></Dummy>
- 
-    <WebinarsContainer>
-     
-      <img
-       src='images/giftcard.jpg'
-        alt='Gift Cards' 
-         
-        style={{height:'350px', width:'350px'}}
-        
+
+      <WebinarsContainer>
+
+        <img
+          src='images/giftcard.jpg'
+          alt='Gift Cards'
+
+          style={{ height: '350px', width: '350px' }}
+
         />
 
         <Amount>
-            <p>The Perfect Gift</p>
-              <form>
-                <input type="text" name="amount" />
+          <div style={{padding:'10px'}}>
+          <p>The Perfect Gift</p>
+          <form>
+          <div style={{display:'flex',alignItems:'center'}}>
+            <div style={{
+              display: 'flex',
+              //width:50px;
+              height:'30px',
+              padding: '3px',
+              //border:1px solid black;
+              // width:50px;
+              border: '1px solid #ADB5BD',
+              alignItems: 'center',
+              borderRadius: '5px'
+            }}
+            >
+              <HorizontalRuleIcon />
 
-                <div>
-                    <label for="amount">Enter Amount</label>
-                    <input type="number" name="amount" value="1" />
-                </div>
-              </form>
+              <input type="text" name="amount" value={4}
+                style={{
+                   width: '25px',
+                  height: '20px',
+                  border: 'none',
+                  outline: 'none',
+                  textAlign: 'center',
+                  fontSize: '20px'
+                }}
+              />
+              <AddIcon />
+
+            </div>
+     
+
+
+            <div style={{
+              position: ' relative',
+              border: '2px solid lightgray',
+              margin: '10px',
+              borderRadius: '5px',
+              marginTop: '10px'
+            }}>
+              <label for="amount" style={{position:'absolute',
+     top:'-15px',
+     left: '10px',
+     padding:'5px 10px',
+     borderRadius: '15px',
+     background: '#fff',
+    color:'black',
+    fontSize:'14px'}}>Enter Amount*</label>
+              <input type="number" name="amount" value="1"
+
+                style={{
+                  border: 'none',
+                  padding: '10px',
+                  width: '150px'
+                }}
+              />
+
+            </div>
+            
+            </div>
+        <div style={{marginTop:'10px',marginLeft:'-10px'}}>
+
+            <div style={{
+              position: ' relative',
+              border: '2px solid lightgray',
+              margin: '10px',
+              borderRadius: '5px',
+              marginTop: '10px',
+              width:'250px'
+            }}>
+              <label for="amount" style={{position: 'absolute',
+     top:'-15px',
+     left: '10px',
+     padding:'4px 10px',
+     borderRadius: '15px',
+     background: '#fff',
+    color:'black',
+    fontSize:'14px'}}>Recipient Email*</label>
+              <input type="text" name="email" placeholder='john@example.com'
+
+                style={{
+                  border: 'none',
+                  padding: '10px',
+                  width: '230px'
+                }}
+              />
+
+            </div>
+            <button style={{color:'white',borderRadius:'5px',backgroundColor:'black',height:'35px',width:'120px',marginLeft:'10px',marginTop:'5px'}}>Add To Card</button>
+            </div>
+            <div style={{marginTop:'20px'}}>
+            <p>Minimum Amount:1</p>
+            <p>Maximum Amount:5000</p>
+            </div>
+          </form>
+          </div>
         </Amount>
-       
-       
-    </WebinarsContainer>
-    
+
+
+      </WebinarsContainer>
+
     </Container>
   )
 }
 
 export default NewGift
 
-const Container =styled.div`
+const Container = styled.div`
   width: 100%;
   display:flex;
 
@@ -71,7 +167,7 @@ const Container =styled.div`
 
 
 
-const WebinarsContainer=styled.div`
+const WebinarsContainer = styled.div`
  
    height:68vh;
    
@@ -99,7 +195,7 @@ const WebinarsContainer=styled.div`
  
 `
 
-const Dummy =styled.div`
+const Dummy = styled.div`
      flex:0.3;
      height:100vh;
 `;
@@ -108,44 +204,71 @@ const Dummy =styled.div`
 
 
 
-const Amount =styled.div`
+const Amount = styled.div`
 padding:20px;
 width:450px;
 height:300px;
 border:1px solid #CCCCCC;
 margin-left:10px;
 
->p{
+>div>p{
   margin-bottom:10px;
   color:#495B83;
   font-size:25px;
 
 }
 
+form >div>p{
+  color:#A1A1A1;
+  font-size:15px;
+  font-weight:300;
+  
+}
+
+>form>div{
+ 
+}
+>div>form>div>div>.MuiSvgIcon-root{
+  color:black;
+  font-size:15px;
+}
+
+
 >form{
-    display:flex;
+    display:column;
+    align-items:center;
+   
 }
 >form>div{
-    border: 2px solid;
-    margin: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
+  
 }
 >form>div>label{
-    position: absolute;
-    top: 6px;
-    left: 20px;
-    padding: 5px 10px;
-    border-radius: 15px;
-    background: #fff;
-    color:black;
+    //  position: absolute;
+    //  top:-15px;
+    //  left: 10px;
+    //  padding: 5px 10px;
+    //  border-radius: 15px;
+    //  background: #fff;
+    // color:black;
+    // font-size:14px;
+
 }
 
 >form>div>input{
-    border: none;
-    background: transparent;
+  
 
 }
+
+>form>div>input{
+  
+}
+
+// .form > div> button{
+//   color:white;
+//   background-color:black;
+//   height:40px;
+//   width:200px;
+// }
 `;
 
 

@@ -14,10 +14,17 @@ import { useSelector } from 'react-redux';
 import {selectPageName} from './components/features/pageSlice'
 import Footer from './components/Footer';
 import NewGift from './components/NewGift';
+import Main from './components/Main';
+
+import { selectPopup } from './components/features/subscripeSlice';
+import SignIn from './components/SignIn';
+import { selectPopupSingnIn } from './components/features/signInSlice';
 
 function App() {
 
-  const name = useSelector(selectPageName)
+  const name = useSelector(selectPageName);
+  const subscripe =useSelector(selectPopup);
+  const signin = useSelector(selectPopupSingnIn)
   return (
     <div className="app">
       <Router>
@@ -26,12 +33,13 @@ function App() {
       {name!=='GiftCard' && name!=='subscripe' ?<Sidebar />:null}
      {name !=='subscripe' ?<Body />:null} 
       <Routes>
-      
+         
+         <Route path='/hvhv'  element={<Main/>}/>
         <Route path='/' element={<Webinars page='Webinars'/>} />
         <Route path='/upcommingwebinars' element={<UpcommingWebinars page='upcommingwebinars' />} />
         <Route path='/products' element={<Products  page='products'/>}  />
         <Route path='/giftcards' element={<NewGift  page='GiftCard'/>}  />
-        <Route path='/subscripe' element={<Subscripe page='subscripe'/>} />
+        {/* <Route path='/subscripe' element={<Subscripe page='subscripe'/>} /> */}
        
      //header
      //sidebar
@@ -39,7 +47,10 @@ function App() {
      </Routes>
      
      </AppBody>
-     <Footer />
+    {subscripe && <Subscripe page='active' /> }
+    {signin && <SignIn page='active' /> } 
+
+     {name !=='subscripe' ? <Footer />:null} 
      </Router>
     </div>
   );

@@ -8,8 +8,41 @@ import Products from './Products';
 import Subscripe from './Subscripe';
 //import User from './User';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useNavigation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addSubscripe } from './features/subscripeSlice';
+import { addSignIn } from './features/signInSlice';
 
 function Header() {
+
+  const dispatch = useDispatch();
+
+  // const handleClick = (e) => {
+    
+  //   e.preventDefault();
+    
+
+  // }
+
+  //const navigation =useNavigation();
+  const handleClick =(e) =>{
+   //e.preventDefault();
+   dispatch(
+     addSubscripe({
+      popup:true
+     })
+   )
+   
+
+  }
+
+  const handleSignInClick = (e) =>{
+    dispatch(
+      addSignIn({
+       popup:true
+      })
+    )
+  }
   return (
     <HeaderContainer>
         <HeaderLeft>
@@ -39,20 +72,23 @@ function Header() {
            <a href='/upcommingwebinars'>
            <span>Upcomming Webinars</span>
            </a>
-           <a href='/products'>
+           {/* <a href='/products'>
            <span>Products</span>
-           </a>
+           </a> */}
 
            <a href='/giftCards'>
            <span>Gift Cards</span>
            </a>
-           <a href='/subscripe'>
+
+           <div onClick={handleClick}>
+           <a href='#' >
            <span>Subscripe</span>
            </a>
+           </div>
            
               </NavMenu>
-              <User>
-                <p>Ravinsan</p>
+              <User onClick={handleSignInClick}>
+                <p>SignIn</p>
                 <AccountCircleIcon />
               </User>
             </Nav>
@@ -209,5 +245,8 @@ const User =styled.div`
  margin-left:10px;
   >p{
     margin-right:10px;
+  }
+  &:hover{
+    cursor:pointer;
   }
 `;
