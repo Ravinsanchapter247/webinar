@@ -39,7 +39,8 @@ function SignIn({page}) {
 
     dispatch(
       addSignIn({
-        popup:false
+        popup:false,
+        active:false
       })
     )
 
@@ -87,7 +88,7 @@ function SignIn({page}) {
 export default SignIn
 
 const SubscripeContainer=styled.div`
-    
+    opacity:1;
   // height:50vh;
    // width:50vw;
   //  background-color:black;

@@ -5,7 +5,7 @@ import { addPage } from './features/pageSlice'
 import AddIcon from '@mui/icons-material/Add';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { borderRadius } from '@mui/system';
-import { selectPageName } from './features/pageSlice';
+import { selectActive } from './features/signInSlice';
 import { useSelector } from 'react-redux';
 
 function NewGift({ page }) {
@@ -28,11 +28,11 @@ function NewGift({ page }) {
 
   )
 
-  const active =useSelector(selectPageName)
+  const active =useSelector(selectActive)
 
   console.log('page:', page)
   return (
-    <Container >
+    <Container style={{opacity:(active?0.3:1)}} >
       <Dummy></Dummy>
 
       <WebinarsContainer>

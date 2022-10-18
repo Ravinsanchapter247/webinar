@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     popup:false,
+    active:false
    
 }
 
@@ -13,6 +14,7 @@ const signInSlice =createSlice({
     reducers:{
         addSignIn: (state,action) =>{
             state.popup=action.payload.popup;
+            state.active=action.payload.active;
         },
 
         
@@ -21,5 +23,6 @@ const signInSlice =createSlice({
 
 export  const {addSignIn} =signInSlice.actions;
 export const selectPopupSingnIn = state =>state.signin.popup;
+export const selectActive = state =>state.signin.active;
 
 export default signInSlice.reducer;

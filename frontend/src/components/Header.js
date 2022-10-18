@@ -39,7 +39,8 @@ function Header() {
   const handleSignInClick = (e) =>{
     dispatch(
       addSignIn({
-       popup:true
+       popup:true,
+       active:true
       })
     )
   }

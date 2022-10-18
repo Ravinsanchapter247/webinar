@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import HomeIcon from '@mui/icons-material/Home';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {addPage} from './features/pageSlice'
+import { selectActive } from './features/signInSlice';
 function Webinars({page}) {
   console.log(page,':page')
 
@@ -24,8 +25,9 @@ function Webinars({page}) {
  
   
   )
+  const active =useSelector(selectActive)
   return (
-    <Container>
+    <Container style={{opacity:(active?0.3:1)}}>
       
  
     <WebinarsContainer>
@@ -36,7 +38,7 @@ function Webinars({page}) {
        
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -44,10 +46,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -56,7 +58,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -64,10 +66,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -76,7 +78,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -84,10 +86,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -96,7 +98,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -104,10 +106,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -117,7 +119,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -125,10 +127,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -144,7 +146,7 @@ function Webinars({page}) {
       <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -152,10 +154,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -164,7 +166,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -172,10 +174,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -184,7 +186,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -192,10 +194,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -204,7 +206,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -212,10 +214,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -225,7 +227,7 @@ function Webinars({page}) {
         <WebinarCardContainer> */}
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
              style={{height:'130px', width:'100%'}}
            />
@@ -233,10 +235,10 @@ function Webinars({page}) {
           <Description>
    <p>This land is in switzland and has total value of 100acrs</p>
           </Description>
-          <hr />
+          {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>1 seats remaining</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
@@ -313,33 +315,60 @@ display:grid;
 `;
 
 const WebinarCard =styled.div`
-border:0.5px solid lightgray;
-border-radius:3px;
+//border:0.5px solid lightgray;
+//border-radius:3px;
 box-shadow:rgb(0 0 0 / 69%)0px 26px 30px -10px,
      rgb(0 0 0 / 73%) 0px 16px 10px -10px;
 width:170px;
 //align-items:center;
 margin-bottom:20px;
 
->hr{
-  border:0.5px solid gray;
-}
+// >hr{
+//   border:0.5px solid gray;
+// }
 `
 
 const WebinarImage =styled.div`
- 
-
+height:130px;
+ width:100%
  
 `
 
 const Description =styled.div`
-padding:10px;
- background-color:black;
- font-size:11px;
+padding:12px;
+ background-color:rgba(7, 8, 4,0.85);
+ font-size:13px;
+ font-family:Figtree;
+ border-bottom:0.05px solid rgba(217, 217, 217,0.2);
 `
 
 const ImageInfo =styled.div` 
-    background-color:black;
-    padding:10px;
-    border-radius:3px;
+background-color:rgba(7, 8, 4,0.85);
+padding:10px;
+//border-radius:3px;
+// font-weight:500;
+
+>p{
+  font-size:13px;
+  font-weight:500;
+}
+
+>h6>span{
+  color:#3A658A;
+  font-weight:bold;
+}
+
+h6:first-of-type {
+ // color:green;
+  //font-style: italic;
+  font-size:12px;
+  font-weight:400;
+
+}
+
+h6:nth-of-type(2) {
+ // font-weight: bold;
+  font-size:11px;
+  font-weight:200;
+}
 `;
