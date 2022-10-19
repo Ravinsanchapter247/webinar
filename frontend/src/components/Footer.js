@@ -96,7 +96,7 @@ const FooterBody = styled.div`
 
     padding:50px;
     justify-content:space-between;
-    border-bottom:0.05px solid lightgray;
+    border-bottom:0.05px solid rgba(217, 217, 217,0.2);
 `;
 
 const FooterSupport = styled.div`

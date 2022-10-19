@@ -242,6 +242,97 @@ function UpcommingWebinars({page}) {
           </ImageInfo>
         </WebinarCard>
        
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/land1.png' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6>Comming Soon!</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/land1.png' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6>Comming Soon!</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/land1.png' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6>Comming Soon!</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+       
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/land1.png' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6>Comming Soon!</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+       
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/land1.png' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6>Comming Soon!</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+       
+       
         </WebinarCardContainer>
        
        

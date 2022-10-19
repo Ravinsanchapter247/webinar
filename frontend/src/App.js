@@ -15,6 +15,7 @@ import {selectPageName} from './components/features/pageSlice'
 import Footer from './components/Footer';
 import NewGift from './components/NewGift';
 import Main from './components/Main';
+import Description from './components/Description';
 
 import { selectPopup } from './components/features/subscripeSlice';
 import SignIn from './components/SignIn';
@@ -29,8 +30,9 @@ function App() {
     <div className="app">
       <Router>
       <Header/>
+      
       <AppBody>
-      {name!=='GiftCard' && name!=='subscripe' ?<Sidebar />:null}
+      {name!=='GiftCard' && name!=='subscripe' && name!=='description'?<Sidebar />:null}
      {name !=='subscripe' ?<Body />:null} 
       <Routes>
          
@@ -40,6 +42,7 @@ function App() {
         <Route path='/products' element={<Products  page='products'/>}  />
         <Route path='/giftcards' element={<NewGift  page='GiftCard'/>}  />
         {/* <Route path='/subscripe' element={<Subscripe page='subscripe'/>} /> */}
+        <Route path='/description' element={<Description page='description' />} />
        
      //header
      //sidebar
@@ -47,10 +50,11 @@ function App() {
      </Routes>
      
      </AppBody>
+     
     {subscripe && <Subscripe page='active' /> }
     {signin && <SignIn page='active' /> } 
 
-     {name !=='subscripe' ? <Footer />:null} 
+     {/* {name !=='subscripe' ? <Footer />:null}  */}
      </Router>
     </div>
   );

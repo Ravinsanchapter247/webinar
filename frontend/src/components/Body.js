@@ -11,7 +11,7 @@ function Body() {
     const page =useSelector(selectPageName)
   return (
     <BodyContainer>
-        <HomeIconContainer >
+        <HomeIconContainer style={{marginLeft:(page=='description'?'200px':page=='giftcards'?'200px':'40px'),marginTop:(page=='description'?'80px':'70px'),color:(page=='giftcards'?'black':'#f5f5f5')}} >
         <HomeIcon />
         <KeyboardDoubleArrowRightIcon />
         <p>{page}</p>

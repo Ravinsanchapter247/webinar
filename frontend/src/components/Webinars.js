@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { useDispatch, useSelector } from 'react-redux';
 import {addPage} from './features/pageSlice'
 import { selectActive } from './features/signInSlice';
+import { useNavigate, useNavigation } from 'react-router-dom';
 function Webinars({page}) {
   console.log(page,':page')
 
@@ -26,6 +27,11 @@ function Webinars({page}) {
   
   )
   const active =useSelector(selectActive)
+   const navigate =useNavigate()
+
+  const handleClick = () =>{
+    navigate('/description')
+  }
   return (
     <Container style={{opacity:(active?0.3:1)}}>
       
@@ -36,7 +42,7 @@ function Webinars({page}) {
     </HeaderContainer>
       <WebinarCardContainer>
        
-        <WebinarCard>
+        <WebinarCard onClick={handleClick}>
           <WebinarImage>
            <img src='images/sub1.avif' alt='' 
            
@@ -242,6 +248,96 @@ function Webinars({page}) {
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+             style={{height:'130px', width:'100%'}}
+           />
+          </WebinarImage>
+          <Description>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </Description>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
        
         </WebinarCardContainer>
        
@@ -260,6 +356,7 @@ const Container =styled.div`
   flex-direction: column;
   margin-top:50px;
   height: 100%;
+  
   
   
 `;
