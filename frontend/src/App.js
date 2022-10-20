@@ -34,15 +34,15 @@ function App() {
       <Header/>
       
       <AppBody>
-      {name!=='GiftCard' && name!=='subscripe' && name!=='description' && name!=='registration'?<Sidebar />:null}
-     {name !=='subscripe' ?<Body />:null} 
+      {name!=='giftCard' && name!=='subscripe' && name!=='description' && name!=='registration' && name!=='active' && name!=='main'?<Sidebar />:null}
+     {name !=='subscripe' && name!=='main'?<Body />:null} 
       <Routes>
          
-         <Route path='/hvhv'  element={<Main/>}/>
+         <Route path='/main'  element={<Main  page='main'/>}/>
         <Route path='/' element={<Webinars page='Webinars'/>} />
         <Route path='/upcommingwebinars' element={<UpcommingWebinars page='upcommingwebinars' />} />
         <Route path='/products' element={<Products  page='products'/>}  />
-        <Route path='/giftcards' element={<NewGift  page='GiftCard'/>}  />
+        <Route path='/giftcards' element={<NewGift  page='giftCard'/>}  />
         {/* <Route path='/subscripe' element={<Subscripe page='subscripe'/>} /> */}
         <Route path='/description' element={<Description page='description' />} />
         <Route path='/registration' element={<Registration page='registration' />} />

@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     popup:false,
+    active:false,
    
 }
 
@@ -13,6 +14,7 @@ const subscripeSlice =createSlice({
     reducers:{
         addSubscripe: (state,action) =>{
             state.popup=action.payload.popup;
+            state.active=action.payload.active;
         },
 
         
@@ -21,5 +23,6 @@ const subscripeSlice =createSlice({
 
 export  const {addSubscripe} =subscripeSlice.actions;
 export const selectPopup = state =>state.subscripe.popup;
+export const selectActiveSubscripe = state =>state.subscripe.active;
 
 export default subscripeSlice.reducer;

@@ -5,7 +5,7 @@ import { addPage } from './features/pageSlice'
 import AddIcon from '@mui/icons-material/Add';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { borderRadius } from '@mui/system';
-import { selectActive } from './features/signInSlice';
+import { addSignIn, selectActive } from './features/signInSlice';
 import { useSelector } from 'react-redux';
 import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -15,6 +15,7 @@ import Footer from './Footer';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import PersonIcon from '@mui/icons-material/Person';
 import Switch from '@mui/material/Switch';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -41,13 +42,22 @@ function Registration({ page }) {
 
     const [isZoomed, setIsZoomed] = useState(false)
     const active = useSelector(selectActive)
-
+   const navigate= useNavigate()
 
     const handleZoomChange = useCallback(shouldZoom => {
         setIsZoomed(shouldZoom)
     }, [])
 
     console.log('page:', page)
+
+    const handleClick = () => {
+        dispatch(
+            addSignIn({
+             popup:true,
+             active:true
+            })
+          )
+    }
     return (
         <Container style={{ opacity: (active ? 0.3 : 1) }} >
             <HeaderContainer>
@@ -110,7 +120,7 @@ function Registration({ page }) {
 
                 <Bottom>
                     <button>Create Account</button>
-                    <p >Do you have an account?<span >Log In</span></p>
+                    <p >Do you have an account?<span onClick={handleClick}>Log In</span></p>
 
                 </Bottom>
 
@@ -130,7 +140,7 @@ const Container = styled.div`
   
 
   margin-top:50px;
-  height: 100vh;
+  //height: 100vh;
   background-color:#F4F3F1;
   //margin: 0 auto;
 

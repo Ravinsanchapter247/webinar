@@ -10,11 +10,11 @@ function Body() {
   
     const page =useSelector(selectPageName)
   return (
-    <BodyContainer>
-        <HomeIconContainer style={{marginLeft:(page=='description' || page=='registration' ?'200px':page=='giftcards'?'200px':'40px'),marginTop:(page=='description'|| page=='registration' ?'80px':'70px'),color:(page=='giftcards'?'black':'#f5f5f5')}} >
+    <BodyContainer >
+        <HomeIconContainer style={{marginLeft:(page=='description' || page=='registration' || page=='giftCard' ?'200px':page=='giftcards' ||page=='active'?'200px':'40px'),marginTop:(page=='description'|| page=='registration' ?'80px':'70px'),}} >
         <HomeIcon />
         <KeyboardDoubleArrowRightIcon />
-        <p>{page}</p>
+        <p style={{color:(page==='giftCard' || page==='registration'?'black':'#f5f5f5')}}>{page}</p>
         </HomeIconContainer>
        
         </BodyContainer>

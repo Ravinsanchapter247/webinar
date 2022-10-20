@@ -3,7 +3,11 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux';
 import {addPage} from './features/pageSlice'
 import { selectActive } from './features/signInSlice';
-function UpcommingWebinars({page}) {
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+
+
+
+function Main({page}) {
 
   const dispatch =useDispatch();
   //const [name,setName] =useState('')
@@ -28,434 +32,347 @@ function UpcommingWebinars({page}) {
   return (
     <Container style={{opacity:(active?0.3:1)}}>
       
- 
-    <WebinarsContainer>
-      <HeaderContainer>
-    {/* <HomeIcon /> */}
-    </HeaderContainer>
-      <WebinarCardContainer>
-       
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+      <MainImageContainer>
+        <img src='/images/main.avif' alt='main image' style={{height:'600px',width:'100%',}} />
+        <ShopContainer>
+         <p>Shop Firearms</p>
+        </ShopContainer>
+      </MainImageContainer>
 
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-       
-       
-    </WebinarsContainer> */}
-    
+      <CategoryContainer>
+        <Category>
+          <ImageContainer>
+            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+          </ImageContainer>
+          <h4>SHOP MAGAZINES</h4>
+        </Category>
+        <Category>
+          <ImageContainer>
+            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+          </ImageContainer>
+          <h4>SHOP MAGAZINES</h4>
+        </Category>
+        <Category>
+          <ImageContainer>
+            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+          </ImageContainer>
+          <h4>SHOP MAGAZINES</h4>
+        </Category>
+        <Category>
+          <ImageContainer>
+            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+          </ImageContainer>
+          <h4>SHOP MAGAZINES</h4>
+        </Category>
+      </CategoryContainer>
 
-    {/* <WebinarsContainer>
 
-      <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
-        <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+       <h3>POPULAR PRODUCTS</h3>
 
-        <WebinarCardContainer> */}
-        <WebinarCard>
+      <RelatedContainer>
+       <CardContainer>
+       <ScrollMenu >
+      <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
-             style={{height:'130px', width:'100%'}}
+             style={{height:'220px', width:'100%'}}
            />
           </WebinarImage>
-          <Description>
+          <CardDescription>
    <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
+          </CardDescription>
           {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
-             style={{height:'130px', width:'100%'}}
+           style={{height:'220px', width:'100%'}}
            />
           </WebinarImage>
-          <Description>
+          <CardDescription>
    <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
+          </CardDescription>
           {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>Comming Soon!</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
-
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
-             style={{height:'130px', width:'100%'}}
+           style={{height:'220px', width:'100%'}}
            />
           </WebinarImage>
-          <Description>
+          <CardDescription>
    <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
+          </CardDescription>
           {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>Comming Soon!</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
-       
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
-             style={{height:'130px', width:'100%'}}
+           style={{height:'220px', width:'100%'}}
            />
           </WebinarImage>
-          <Description>
+          <CardDescription>
    <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
+          </CardDescription>
           {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>Comming Soon!</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
-       
         <WebinarCard>
           <WebinarImage>
-           <img src='images/land1.png' alt='' 
+           <img src='images/sub1.avif' alt='' 
            
-             style={{height:'130px', width:'100%'}}
+           style={{height:'220px', width:'100%'}}
            />
           </WebinarImage>
-          <Description>
+          <CardDescription>
    <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
+          </CardDescription>
           {/* <hr /> */}
           <ImageInfo>
           <p>$25.55</p>
-          <h6>Comming Soon!</h6>
+          <h6><span>1</span> seats remaining</h6>
           <h6>Earn 25 reward points</h6>
           </ImageInfo>
         </WebinarCard>
-       
-       
-        </WebinarCardContainer>
-       
-       
-    </WebinarsContainer>
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+           style={{height:'220px', width:'100%'}}
+           />
+          </WebinarImage>
+          <CardDescription>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </CardDescription>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+           style={{height:'220px', width:'100%'}}
+           />
+          </WebinarImage>
+          <CardDescription>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </CardDescription>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+        <WebinarCard>
+          <WebinarImage>
+           <img src='images/sub1.avif' alt='' 
+           
+            style={{height:'220px', width:'100%'}}
+           />
+          </WebinarImage>
+          <CardDescription>
+   <p>This land is in switzland and has total value of 100acrs</p>
+          </CardDescription>
+          {/* <hr /> */}
+          <ImageInfo>
+          <p>$25.55</p>
+          <h6><span>1</span> seats remaining</h6>
+          <h6>Earn 25 reward points</h6>
+          </ImageInfo>
+        </WebinarCard>
+        </ScrollMenu>
+       </CardContainer>
+       </RelatedContainer>
+   
     
     </Container>
   )
 }
 
-export default UpcommingWebinars
+export default Main
 
 const Container =styled.div`
   width: 100%;
   display:flex;
   flex-direction: column;
-  margin-top:50px;
-  height: 100%;
-  
-  
-`;
+  margin-top:70px;
+  //height: 100%;
+  background-color:#F4F3F1;
 
-const Contain =styled.div`
- margin-top:50px;
-`
-
-const HeaderContainer =styled.div`
-   margin-top:50px;
-   //padding-left:70px
-`;
-
-const WebinarsContainer=styled.div`
- 
-   height:100vh;
-   
- background-color:gray;
-  
-  display:column;
-  color:white;
-  flex:0.7;
- flex-grow:1;
-   overflow-y:scroll ;
- 
-     
-  
-  justify-content:center;
-  // display:grid;
-  // grid-gap:5px;
-  // gap:5px;
-  // grid-template-columns:repeat(5,minmax(0,1fr));
-
-  @media(max-width: 768px){
-    grid-template-columns:repeat(2,minmax(0,1fr))
+  text-align: center;
+  >h3{
+    
+    margin-top:30px;
+    margin-bottom:30px;
+    font-size:25px;
+    
   }
- 
-`
-
-const WebinarCardContainer =styled.div`
- 
-//border-radius: 15px;
-//padding:25px;
-display:flex;
-width:90%;
-margin-left:40px;
-margin-top:20px;
-display:grid;
-  grid-gap:0px;
-  gap:0px;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-
+  
 `;
 
-const WebinarCard =styled.div`
-border:0.5px solid rgba(255,255,255,0.2);
-border-radius:3px;
+const MainImageContainer =styled.div`
+    width: 95%;
+    padding:30px;
+    position: relative;
+`;
+
+const ShopContainer =styled.div`
+  padding:8px;
+  background-color:black;
+  color:white;
+  width:300px;
+  font-size:42px;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  font-weight:bold;
+   z-index:10;
+   left:0;
+   right:0;
+   margin: 0 auto;
+   top:500px;
+   padding-left:20px;
+  
+
+ 
+  
+`;
+
+const CategoryContainer = styled.div`
+
+padding:20px;
+background-color:white;
+margin:30px;
+margin-top:10px;
+display:flex;
+justify-content:space-between;
+`;
+
+const Category = styled.div`
+
+   text-align:center;
+   >h4{
+    font-size:17px;
+    color:#2E5B83;
+   }
+ 
+  
+`;
+
+const ImageContainer = styled.div`
+
+`;
+  
+
+const CardContainer = styled.div`
+display:flex;
+//width:100%;
+overflow-x:scroll;
+
+`;
+const WebinarCard = styled.div`
+border:1.5px solid rgba(211,211,211,0.5);
+//border-radius:3px;
 box-shadow:rgb(0 0 0 / 69%)0px 26px 30px -10px,
      rgb(0 0 0 / 73%) 0px 16px 10px -10px;
-width:170px;
+width:250px;
 //align-items:center;
 margin-bottom:20px;
+margin-right:20px;
+// >hr{
+//   border:0.5px solid gray;
+// }
+`;
 
->hr{
-  border:0.5px solid gray;
-}
-`
+const WebinarImage = styled.div`
+height:220px;
+width:100%
+`;
 
-const WebinarImage =styled.div`
- 
-height:130px;
- width:100%
- 
-`
 
-const Description =styled.div`
-padding:12px;
- background-color:rgba(7, 8, 4,0.85);
- font-size:13px;
- font-family:Figtree;
- border-bottom:0.05px solid rgba(217, 217, 217,0.2);
-`
+const CardDescription = styled.div`
+padding:14px;
+background-color:white;
+font-size:18px;
+font-family:Figtree;
+height:70px;
+font-weight:bold;
+color:black;
+border-bottom:0.05px solid rgba(217, 217, 217,0.8);
+`;
 
-const ImageInfo =styled.div` 
-background-color:rgba(7, 8, 4,0.85);
-padding:10px;
+const ImageInfo = styled.div`
+background-color:white;
+padding:14px;
 //border-radius:3px;
 // font-weight:500;
-    
+color:black;
+height:70px;
+text-align:start;
 >p{
-  font-size:13px;
-  font-weight:500;
+ font-size:21px;
+ font-weight:500;
 }
 
-   
-    h6:first-of-type {
-      color:green;
-      font-style: italic;
-      font-size:12px;
-  font-weight:400;
+>h6>span{
+ color:#3A658A;
+ font-weight:bold;
+}
 
-    }
+h6:first-of-type {
+// color:green;
+ //font-style: italic;
+ font-size:16px;
+ font-weight:400;
 
-    h6:nth-of-type(2) {
-      font-size:11px;
-  font-weight:200;
-    }
-    
+}
+
+h6:nth-of-type(2) {
+// font-weight: bold;
+ font-size:12px;
+ font-weight:200;
+}
 `;
+
+const RelatedContainer = styled.div`
+    padding:20px;
+    background-color:white;
+     width:92vw;
+     margin-left:30px;
+      margin-top:10px;
+      color:white;
+      
+      
+      >p{
+        margin-bottom:15px;
+        letter-spacing:1.5px;
+      }
+    `;

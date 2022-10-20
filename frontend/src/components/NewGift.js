@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { borderRadius } from '@mui/system';
 import { selectActive } from './features/signInSlice';
+import { selectActiveSubscripe } from './features/subscripeSlice';
 import { useSelector } from 'react-redux';
 
 function NewGift({ page }) {
@@ -29,10 +30,13 @@ function NewGift({ page }) {
   )
 
   const active =useSelector(selectActive)
+  const activeSub =useSelector(selectActiveSubscripe)
+
+  
 
   console.log('page:', page)
   return (
-    <Container style={{opacity:(active?0.3:1)}} >
+    <Container style={{opacity:(active || activeSub?0.3:1)}} >
       <Dummy></Dummy>
 
       <WebinarsContainer>

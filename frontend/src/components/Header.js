@@ -1,5 +1,5 @@
 import React from 'react'
-import  styled  from "styled-components";
+import styled from "styled-components";
 
 import SearchIcon from '@mui/icons-material/Search';
 import Webinars from './Webinars';
@@ -8,7 +8,7 @@ import Products from './Products';
 import Subscripe from './Subscripe';
 //import User from './User';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useNavigation } from 'react-router-dom';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addSubscripe } from './features/subscripeSlice';
 import { addSignIn } from './features/signInSlice';
@@ -16,85 +16,95 @@ import { addSignIn } from './features/signInSlice';
 function Header() {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // const handleClick = (e) => {
-    
+
   //   e.preventDefault();
-    
+
 
   // }
 
   //const navigation =useNavigation();
-  const handleClick =(e) =>{
-   //e.preventDefault();
-   dispatch(
-     addSubscripe({
-      popup:true
-     })
-   )
-   
+  const handleClick = (e) => {
+    //e.preventDefault();
+    dispatch(
+      addSubscripe({
+        popup: true,
+        active: true
+
+      })
+    )
+
 
   }
 
-  const handleSignInClick = (e) =>{
+  const handleSignInClick = (e) => {
     dispatch(
       addSignIn({
-       popup:true,
-       active:true
+        popup: true,
+        active: true
       })
     )
   }
+
+  const handleIconClick = (e) => {
+     e.preventDefault();
+     navigate('/main')
+
+  
+  }
   return (
     <HeaderContainer>
-        <HeaderLeft>
-            <img src="/images/logo3.jpg" alt="" 
-              style={{height:40,width:80,padding:10}}
-            />
-        </HeaderLeft>
+      <HeaderLeft onClick={handleIconClick}>
+        <img src="/images/logo3.jpg" alt=""
+          style={{ height: 40, width: 80, padding: 10 }}
+        />
+      </HeaderLeft>
 
-        <HeaderSearch>
-        <input type='text' placeholder='Search for webinars...'/>
-            <SearchIcon/>
-          
-        </HeaderSearch>
+      <HeaderSearch>
+        <input type='text' placeholder='Search for webinars...' />
+        <SearchIcon />
 
-        <HeaderRight>
-            {/* <Webinars />
+      </HeaderSearch>
+
+      <HeaderRight>
+        {/* <Webinars />
             <UpcommingWebinars />
             <Products />
             <Subscripe />
             <User /> */}
-            <Nav>
-              <NavMenu>
-              <a href='/'>
-           <span>Webinars</span>
-           </a>
+        <Nav>
+          <NavMenu>
+            <a href='/'>
+              <span>Webinars</span>
+            </a>
 
-           <a href='/upcommingwebinars'>
-           <span>Upcomming Webinars</span>
-           </a>
-           {/* <a href='/products'>
+            <a href='/upcommingwebinars'>
+              <span>Upcomming Webinars</span>
+            </a>
+            {/* <a href='/products'>
            <span>Products</span>
            </a> */}
 
-           <a href='/giftCards'>
-           <span>Gift Cards</span>
-           </a>
+            <a href='/giftCards'>
+              <span>Gift Cards</span>
+            </a>
 
-           <div onClick={handleClick}>
-           <a href='#' >
-           <span>Subscripe</span>
-           </a>
-           </div>
-           
-              </NavMenu>
-              <User onClick={handleSignInClick}>
-                <p>SignIn</p>
-                <AccountCircleIcon />
-              </User>
-            </Nav>
+            <div onClick={handleClick}>
+              <a href='#' >
+                <span>Subscripe</span>
+              </a>
+            </div>
 
-        </HeaderRight> 
+          </NavMenu>
+          <User onClick={handleSignInClick}>
+            <p>SignIn</p>
+            <AccountCircleIcon />
+          </User>
+        </Nav>
+
+      </HeaderRight>
 
     </HeaderContainer>
   )
@@ -116,16 +126,20 @@ background-color:black;
 
 `
 
-const HeaderLeft=styled.div`
+const HeaderLeft = styled.div`
   border-right: 0.1px solid gray;
   
   >img{
     padding:5px;
     
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
-const HeaderSearch=styled.div`
+const HeaderSearch = styled.div`
 
 opacity:1;
 border:none;
@@ -164,7 +178,7 @@ border-right: 0.1px solid gray;
 
 `
 
-const HeaderRight=styled.div`
+const HeaderRight = styled.div`
 
   display:flex;
   color:white;
@@ -174,7 +188,7 @@ const HeaderRight=styled.div`
   
 `
 
-const Nav =styled.nav`
+const Nav = styled.nav`
   display:flex;
   justify-content:space-between;
    align-items:center;
@@ -183,7 +197,7 @@ const Nav =styled.nav`
    z-index:3
 `
 
-const NavMenu =styled.div`
+const NavMenu = styled.div`
 align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -226,6 +240,8 @@ align-items: center;
       }
     }
 
+    
+
    
     &:hover {
       span:before {
@@ -235,12 +251,15 @@ align-items: center;
       }
     }
   }
+//  > a:active {
+//     color: yellow;
+//   }
   /* @media (max-width: 768px) {
     display: none;
   } */
 `;
 
-const User =styled.div`
+const User = styled.div`
  display:flex;
  align-items:center;
  margin-left:10px;
