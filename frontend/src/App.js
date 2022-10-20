@@ -20,6 +20,8 @@ import Description from './components/Description';
 import { selectPopup } from './components/features/subscripeSlice';
 import SignIn from './components/SignIn';
 import { selectPopupSingnIn } from './components/features/signInSlice';
+//import Regisration from './components/Registration';
+import Registration from './components/Registration';
 
 function App() {
 
@@ -32,7 +34,7 @@ function App() {
       <Header/>
       
       <AppBody>
-      {name!=='GiftCard' && name!=='subscripe' && name!=='description'?<Sidebar />:null}
+      {name!=='GiftCard' && name!=='subscripe' && name!=='description' && name!=='registration'?<Sidebar />:null}
      {name !=='subscripe' ?<Body />:null} 
       <Routes>
          
@@ -43,7 +45,7 @@ function App() {
         <Route path='/giftcards' element={<NewGift  page='GiftCard'/>}  />
         {/* <Route path='/subscripe' element={<Subscripe page='subscripe'/>} /> */}
         <Route path='/description' element={<Description page='description' />} />
-       
+        <Route path='/registration' element={<Registration page='registration' />} />
      //header
      //sidebar
      //body

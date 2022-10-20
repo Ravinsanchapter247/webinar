@@ -10,6 +10,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { addSubscripe } from './features/subscripeSlice';
 import { addSignIn } from './features/signInSlice';
+import { useNavigate } from 'react-router-dom';
 
 
  
@@ -18,6 +19,7 @@ import { addSignIn } from './features/signInSlice';
 function SignIn({page}) {
 
   const dispatch =useDispatch();
+  const navigate = useNavigate();
 
   useEffect( () =>{
 
@@ -44,6 +46,11 @@ function SignIn({page}) {
       })
     )
 
+  }
+
+  const handleSignUp = () =>{
+     navigate('/registration');
+     console.log('Register');
   }
   return (
   
@@ -72,8 +79,8 @@ function SignIn({page}) {
  </Email>
  <button>Login</button>
 </SubscripeBody>
-<SubscripeBottom>
-<p>Don't have an account?<span>Sign Up</span></p>
+<SubscripeBottom >
+<p >Don't have an account?<span onClick={handleSignUp} >Sign Up</span></p>
  
 </SubscripeBottom>
 </SubscripeMenu>
@@ -170,13 +177,15 @@ const Email =styled.div`
         font-size:15px;
     }
 
-    &:hover {
-        border:2px solid #9DC0FA;
-        outline:2px solid #9DC0FA;
-    }
+    
   }
     >p{
         font-family:Roboto;
+    }
+
+    input:focus {
+      border:2px solid #9DC0FA;
+      outline:2px solid #9DC0FA;
     }
   margin-top:15px;
 `;
