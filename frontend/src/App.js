@@ -22,6 +22,7 @@ import SignIn from './components/SignIn';
 import { selectPopupSingnIn } from './components/features/signInSlice';
 //import Regisration from './components/Registration';
 import Registration from './components/Registration';
+import UserDashboard from './components/UserDashboard';
 
 function App() {
 
@@ -34,10 +35,10 @@ function App() {
         <Header />
 
         <AppBody>
-          {name !== 'giftCard' && name !== 'subscripe' && name !== 'description' && name !== 'registration' && name !== 'active' && name !== 'main' ? <Sidebar /> : null}
-          {name !== 'subscripe' && name !== 'main' ? <Body /> : null}
+          {name !== 'giftCard' && name !== 'subscripe' && name !== 'description' && name !== 'registration' && name !== 'active' && name !== 'main' && name!=='dashboard' ? <Sidebar /> : null}
+          {name !== 'subscripe' && name !== 'main' && name !=='dashboard' ? <Body /> : null}
           <Routes>
-
+            <Route path='/dashboard'  element={<UserDashboard page='dashboard' />} />
             <Route path='/main' element={<Main page='main' />} />
             <Route path='/' element={<Webinars page='Webinars' />} />
             <Route path='/upcommingwebinars' element={<UpcommingWebinars page='upcommingwebinars' />} />

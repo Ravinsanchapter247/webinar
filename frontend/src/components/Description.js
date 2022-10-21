@@ -5,7 +5,7 @@ import { addPage } from './features/pageSlice'
 import AddIcon from '@mui/icons-material/Add';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { borderRadius } from '@mui/system';
-import { selectActive } from './features/signInSlice';
+import { addSignIn, selectActive } from './features/signInSlice';
 import { useSelector } from 'react-redux';
 import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -13,6 +13,7 @@ import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import InnerImageZoom from 'react-inner-image-zoom';
 import Footer from './Footer';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -46,6 +47,17 @@ function Description({ page }) {
   }, [])
 
   console.log('page:', page)
+
+  const handleClick = () => {
+
+    dispatch(
+      addSignIn({
+        popup:true,
+        active:true
+      })
+    )
+
+  }
   return (
     <Container style={{ opacity: (active ? 0.3 : 1) }} >
       <HeaderContainer>
@@ -60,7 +72,7 @@ function Description({ page }) {
         <DescriptionText>
           <h1>Borka Blades SB1 Black PVD w/ Carbon Fiber Scales Webinar</h1>
           <h4>$25.75</h4>
-          <button>Login To Book Seats</button>
+          <button onClick={handleClick}>Login To Book Seats</button>
           <p>3 remaining seats!</p>
 
         </DescriptionText>
@@ -241,7 +253,7 @@ function Description({ page }) {
         <CommentBox>
           <input type="text" placeholder="Leave a comment" />
         </CommentBox>
-        <button>Login To Comment</button>
+        <button onClick={handleClick}>Login To Comment</button>
       </CommentContainer>
 
       <Footer />

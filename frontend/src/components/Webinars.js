@@ -423,6 +423,10 @@ margin-bottom:20px;
 // >hr{
 //   border:0.5px solid gray;
 // }
+
+&:hover {
+  cursor: pointer;
+}
 `
 
 const WebinarImage = styled.div`

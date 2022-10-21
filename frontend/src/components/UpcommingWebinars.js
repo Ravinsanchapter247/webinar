@@ -419,6 +419,10 @@ width:170px;
 //align-items:center;
 margin-bottom:20px;
 
+&:hover {
+  cursor: pointer;
+}
+
 >hr{
   border:0.5px solid gray;
 }
