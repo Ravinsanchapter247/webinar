@@ -16,7 +16,7 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 
 
-const props = {width: 400, height: 250, zoomWidth: 500, img: "images/description.avif"};
+const props = { width: 400, height: 250, zoomWidth: 500, img: "images/description.avif" };
 function Description({ page }) {
 
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function Description({ page }) {
   )
 
   const [isZoomed, setIsZoomed] = useState(false)
-  const active =useSelector(selectActive)
+  const active = useSelector(selectActive)
 
 
   const handleZoomChange = useCallback(shouldZoom => {
@@ -47,203 +47,203 @@ function Description({ page }) {
 
   console.log('page:', page)
   return (
-    <Container style={{opacity:(active?0.3:1)}} >
-        <HeaderContainer>
+    <Container style={{ opacity: (active ? 0.3 : 1) }} >
+      <HeaderContainer>
 
-  
-        </HeaderContainer>
-        <DescriptionContainer>
+
+      </HeaderContainer>
+      <DescriptionContainer>
         <ImageContainer>
-        <InnerImageZoom src="images/description.avif" zoomSrc="images/description.avif" width={400} height={400} zoomType={'hover'} zoomScale={0.5}/>
-        
+          <InnerImageZoom src="images/description.avif" zoomSrc="images/description.avif" width={400} height={400} zoomType={'hover'} zoomScale={0.5} />
+
         </ImageContainer>
         <DescriptionText>
-        <h1>Borka Blades SB1 Black PVD w/ Carbon Fiber Scales Webinar</h1>
-        <h4>$25.75</h4>
-        <button>Login To Book Seats</button>
-        <p>3 remaining seats!</p>
+          <h1>Borka Blades SB1 Black PVD w/ Carbon Fiber Scales Webinar</h1>
+          <h4>$25.75</h4>
+          <button>Login To Book Seats</button>
+          <p>3 remaining seats!</p>
 
         </DescriptionText>
-    </DescriptionContainer>
+      </DescriptionContainer>
 
-    <SpecificationsContainer>
+      <SpecificationsContainer>
         <Title>
-         <p>Specifications</p>
+          <p>Specifications</p>
         </Title>
 
         <p>Product:<span>Borka Blades SB1 Black PVD w/ Carbon Fiber Scales</span></p>
         <Bottom>
-         <p>Remaining Seats: <span>3</span></p>
-         <p>Category: <span>Fixed Blade</span></p>
-         <p>Manufactures: <span>Borka Blades</span></p>
+          <p>Remaining Seats: <span>3</span></p>
+          <p>Category: <span>Fixed Blade</span></p>
+          <p>Manufactures: <span>Borka Blades</span></p>
         </Bottom>
-    </SpecificationsContainer>
+      </SpecificationsContainer>
 
-    <BodyDescription>
-      <HeaderDescription>
-       <p>Description</p>
-      </HeaderDescription>
-      <p>Take a look at the Ruger New Model Super Blackhawk .44Mag 7.5" SAO in this Exclusive webinar.</p>
-      <p>Take a look at the Ruger New Model Super Blackhawk .44Mag 7.5" SAO in this Exclusive webinar.</p>
-      <p>Limited to only 30 viewers per show. </p>
-      <p>*one per person</p>
-      <p>THIS PURCHASE IS TO VIEW A PRODUCT REVIEW WEBINAR, not the purchase of the product itself.</p>
-      <p>***LICENSED FFL***</p>
-      <p>As typical with all of our Webinars, we will give 1 individual the item we are reviewing at the end...FOR FREE!!</p>
-    </BodyDescription>
+      <BodyDescription>
+        <HeaderDescription>
+          <p>Description</p>
+        </HeaderDescription>
+        <p>Take a look at the Ruger New Model Super Blackhawk .44Mag 7.5" SAO in this Exclusive webinar.</p>
+        <p>Take a look at the Ruger New Model Super Blackhawk .44Mag 7.5" SAO in this Exclusive webinar.</p>
+        <p>Limited to only 30 viewers per show. </p>
+        <p>*one per person</p>
+        <p>THIS PURCHASE IS TO VIEW A PRODUCT REVIEW WEBINAR, not the purchase of the product itself.</p>
+        <p>***LICENSED FFL***</p>
+        <p>As typical with all of our Webinars, we will give 1 individual the item we are reviewing at the end...FOR FREE!!</p>
+      </BodyDescription>
 
-    <RelatedContainer>
-      <p>Related Webinars</p>
-      <CardContainer>
-      <ScrollMenu >
-      <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'140px', width:'110%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        </ScrollMenu>
-      </CardContainer>
-    </RelatedContainer>
+      <RelatedContainer>
+        <p>Related Webinars</p>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
 
-    <CommentContainer>
-      <p>Comments</p>
-      <CommentBox>
-      <input type="text" placeholder="Leave a comment" />
-      </CommentBox>
-      <button>Login To Comment</button>
-    </CommentContainer>
-      
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '140px', width: '110%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+      <CommentContainer>
+        <p>Comments</p>
+        <CommentBox>
+          <input type="text" placeholder="Leave a comment" />
+        </CommentBox>
+        <button>Login To Comment</button>
+      </CommentContainer>
+
       <Footer />
     </Container>
   )
@@ -265,7 +265,7 @@ const Container = styled.div`
   
 `;
 
-const HeaderContainer= styled.div`
+const HeaderContainer = styled.div`
 
 margin-top:20px;
 padding:20px;
@@ -324,7 +324,7 @@ const DescriptionText = styled.div`
  }
 `;
 
-    const SpecificationsContainer = styled.div`
+const SpecificationsContainer = styled.div`
       padding:20px;
       background-color:black;
 width:70.2vw;
@@ -344,14 +344,14 @@ margin-top:10px;
 }
     `;
 
-    const Title = styled.div`
+const Title = styled.div`
       color:white;
       font-size:20px;
       margin-bottom:20px;
       letter-spacing:1.5px;
     `;
 
-    const Bottom = styled.div`
+const Bottom = styled.div`
        display:flex;
        justify-content:space-between;
      >p{
@@ -361,7 +361,7 @@ margin-top:10px;
      }
     `;
 
-    const BodyDescription = styled.div`
+const BodyDescription = styled.div`
     padding:20px;
     background-color:black;
      width:70.2vw;
@@ -378,7 +378,7 @@ margin-top:10px;
       }
     `;
 
-    const HeaderDescription = styled.div`
+const HeaderDescription = styled.div`
     font-size:20px;
     margin-bottom:30px;
     >p{
@@ -386,7 +386,7 @@ margin-top:10px;
     }
     `;
 
-    const RelatedContainer = styled.div`
+const RelatedContainer = styled.div`
     padding:20px;
     background-color:black;
      width:70.2vw;
@@ -401,14 +401,14 @@ margin-top:10px;
       }
     `;
 
-    const CardContainer = styled.div`
+const CardContainer = styled.div`
       display:flex;
       //width:100%;
       overflow-x:scroll;
 
     `;
 
-    const WebinarCard = styled.div`
+const WebinarCard = styled.div`
     border:1.5px solid rgba(211,211,211,0.5);
     //border-radius:3px;
     box-shadow:rgb(0 0 0 / 69%)0px 26px 30px -10px,
@@ -422,13 +422,13 @@ margin-top:10px;
     // }
     `;
 
-   const WebinarImage = styled.div`
+const WebinarImage = styled.div`
    height:140px;
    width:91%
    `;
-   
-   
-   const CardDescription = styled.div`
+
+
+const CardDescription = styled.div`
    padding:14px;
    background-color:white;
    font-size:13px;
@@ -438,7 +438,7 @@ margin-top:10px;
    border-bottom:0.05px solid rgba(217, 217, 217,0.8);
    `;
 
-   const ImageInfo = styled.div`
+const ImageInfo = styled.div`
    background-color:white;
    padding:14px;
    //border-radius:3px;
@@ -470,7 +470,7 @@ margin-top:10px;
    `;
 
 
-   const CommentContainer = styled.div`
+const CommentContainer = styled.div`
    padding:10px;
    background-color:black;
    width:71.5vw;
@@ -500,7 +500,7 @@ margin-top:10px;
    `;
 
 
-   const CommentBox = styled.div`
+const CommentBox = styled.div`
     >input{
       width:40vw;
       height:10vh;

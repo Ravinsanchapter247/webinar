@@ -29,14 +29,14 @@ function NewGift({ page }) {
 
   )
 
-  const active =useSelector(selectActive)
-  const activeSub =useSelector(selectActiveSubscripe)
+  const active = useSelector(selectActive)
+  const activeSub = useSelector(selectActiveSubscripe)
 
-  
+
 
   console.log('page:', page)
   return (
-    <Container style={{opacity:(active || activeSub?0.3:1)}} >
+    <Container style={{ opacity: (active || activeSub ? 0.3 : 1) }} >
       <Dummy></Dummy>
 
       <WebinarsContainer>
@@ -50,102 +50,106 @@ function NewGift({ page }) {
         />
 
         <Amount>
-          <div style={{padding:'10px'}}>
-          <p>The Perfect Gift</p>
-          <form>
-          <div style={{display:'flex',alignItems:'center'}}>
-            <div style={{
-              display: 'flex',
-              //width:50px;
-              height:'30px',
-              padding: '3px',
-              //border:1px solid black;
-              // width:50px;
-              border: '1px solid #ADB5BD',
-              alignItems: 'center',
-              borderRadius: '5px'
-            }}
-            >
-              <HorizontalRuleIcon />
-
-              <input type="text" name="amount" value={4}
-                style={{
-                   width: '25px',
-                  height: '20px',
-                  border: 'none',
-                  outline: 'none',
-                  textAlign: 'center',
-                  fontSize: '20px'
+          <div style={{ padding: '10px' }}>
+            <p>The Perfect Gift</p>
+            <form>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{
+                  display: 'flex',
+                  //width:50px;
+                  height: '30px',
+                  padding: '3px',
+                  //border:1px solid black;
+                  // width:50px;
+                  border: '1px solid #ADB5BD',
+                  alignItems: 'center',
+                  borderRadius: '5px'
                 }}
-              />
-              <AddIcon />
+                >
+                  <HorizontalRuleIcon />
 
-            </div>
-     
+                  <input type="text" name="amount" value={4}
+                    style={{
+                      width: '25px',
+                      height: '20px',
+                      border: 'none',
+                      outline: 'none',
+                      textAlign: 'center',
+                      fontSize: '20px'
+                    }}
+                  />
+                  <AddIcon />
+
+                </div>
 
 
-            <div style={{
-              position: ' relative',
-              border: '2px solid lightgray',
-              margin: '10px',
-              borderRadius: '5px',
-              marginTop: '10px'
-            }}>
-              <label for="amount" style={{position:'absolute',
-     top:'-15px',
-     left: '10px',
-     padding:'5px 10px',
-     borderRadius: '15px',
-     background: '#fff',
-    color:'black',
-    fontSize:'14px'}}>Enter Amount*</label>
-              <input type="number" name="amount" value="1"
 
-                style={{
-                  border: 'none',
-                  padding: '10px',
-                  width: '150px'
-                }}
-              />
+                <div style={{
+                  position: ' relative',
+                  border: '2px solid lightgray',
+                  margin: '10px',
+                  borderRadius: '5px',
+                  marginTop: '10px'
+                }}>
+                  <label for="amount" style={{
+                    position: 'absolute',
+                    top: '-15px',
+                    left: '10px',
+                    padding: '5px 10px',
+                    borderRadius: '15px',
+                    background: '#fff',
+                    color: 'black',
+                    fontSize: '14px'
+                  }}>Enter Amount*</label>
+                  <input type="number" name="amount" value="1"
 
-            </div>
-            
-            </div>
-        <div style={{marginTop:'10px',marginLeft:'-10px'}}>
+                    style={{
+                      border: 'none',
+                      padding: '10px',
+                      width: '150px'
+                    }}
+                  />
 
-            <div style={{
-              position: ' relative',
-              border: '2px solid lightgray',
-              margin: '10px',
-              borderRadius: '5px',
-              marginTop: '10px',
-              width:'250px'
-            }}>
-              <label for="amount" style={{position: 'absolute',
-     top:'-15px',
-     left: '10px',
-     padding:'4px 10px',
-     borderRadius: '15px',
-     background: '#fff',
-    color:'black',
-    fontSize:'14px'}}>Recipient Email*</label>
-              <input type="text" name="email" placeholder='john@example.com'
+                </div>
 
-                style={{
-                  border: 'none',
-                  padding: '10px',
-                  width: '230px'
-                }}
-              />
+              </div>
+              <div style={{ marginTop: '10px', marginLeft: '-10px' }}>
 
-            </div>
-            <button style={{color:'white',borderRadius:'5px',backgroundColor:'black',height:'35px',width:'120px',marginLeft:'10px',marginTop:'5px'}}>Add To Card</button>
-            </div>
-            <div style={{marginTop:'20px'}}>
-            <p>Minimum Amount:1</p>
-            <p>Maximum Amount:5000</p>
-            </div>
-          </form>
+                <div style={{
+                  position: ' relative',
+                  border: '2px solid lightgray',
+                  margin: '10px',
+                  borderRadius: '5px',
+                  marginTop: '10px',
+                  width: '250px'
+                }}>
+                  <label for="amount" style={{
+                    position: 'absolute',
+                    top: '-15px',
+                    left: '10px',
+                    padding: '4px 10px',
+                    borderRadius: '15px',
+                    background: '#fff',
+                    color: 'black',
+                    fontSize: '14px'
+                  }}>Recipient Email*</label>
+                  <input type="text" name="email" placeholder='john@example.com'
+
+                    style={{
+                      border: 'none',
+                      padding: '10px',
+                      width: '230px'
+                    }}
+                  />
+
+                </div>
+                <button style={{ color: 'white', borderRadius: '5px', backgroundColor: 'black', height: '35px', width: '120px', marginLeft: '10px', marginTop: '5px' }}>Add To Card</button>
+              </div>
+              <div style={{ marginTop: '20px' }}>
+                <p>Minimum Amount:1</p>
+                <p>Maximum Amount:5000</p>
+              </div>
+            </form>
           </div>
         </Amount>
 

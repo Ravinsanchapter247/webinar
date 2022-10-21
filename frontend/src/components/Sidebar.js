@@ -17,7 +17,7 @@ function Sidebar() {
 export default Sidebar
 
 
-const SidebarContainer= styled.div`
+const SidebarContainer = styled.div`
 background-color:black;
 margin-top:60px;
 color:white;

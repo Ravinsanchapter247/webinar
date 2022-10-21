@@ -18,38 +18,38 @@ function SidebarBodyPriceRange() {
   };
   return (
     <SidebarBodyPriceRangeContainer>
-       <p>PRICE IN USD</p>
-       <SidebarBodyPriceInputContaniner>
-         <input type='number' value={10} />
-                -
-          <input type='number' value={50}/>
-          <button>OK</button >
-       </SidebarBodyPriceInputContaniner>
+      <p>PRICE IN USD</p>
+      <SidebarBodyPriceInputContaniner>
+        <input type='number' value={10} />
+        -
+        <input type='number' value={50} />
+        <button>OK</button >
+      </SidebarBodyPriceInputContaniner>
 
 
-       <SidebarPriceRangeSliderContainer>
-       <Box sx={{ width: 200 }}>
-      <Slider
-        getAriaLabel={() => 'Temperature range'}
-        value={value}
-        onChange={handleChange}
-       // valueLabelDisplay="none"
-        getAriaValueText={valuetext}
-        size={'small'}
-        style={{color: 'gray',marginTop: '10px',height:'0.5px'}}
-      />
-    </Box>
-       </SidebarPriceRangeSliderContainer>
+      <SidebarPriceRangeSliderContainer>
+        <Box sx={{ width: 200 }}>
+          <Slider
+            getAriaLabel={() => 'Temperature range'}
+            value={value}
+            onChange={handleChange}
+            // valueLabelDisplay="none"
+            getAriaValueText={valuetext}
+            size={'small'}
+            style={{ color: 'gray', marginTop: '10px', height: '0.5px' }}
+          />
+        </Box>
+      </SidebarPriceRangeSliderContainer>
 
 
-      </SidebarBodyPriceRangeContainer>
+    </SidebarBodyPriceRangeContainer>
   )
 }
 
 export default SidebarBodyPriceRange
 
 
-const SidebarBodyPriceRangeContainer =styled.div`
+const SidebarBodyPriceRangeContainer = styled.div`
 margin-top: 10px;
 >p{
 
@@ -61,7 +61,7 @@ margin-top: 10px;
 `;
 
 
-const SidebarBodyPriceInputContaniner =styled.div`
+const SidebarBodyPriceInputContaniner = styled.div`
     display:flex;
 
     >input{
@@ -84,7 +84,7 @@ const SidebarBodyPriceInputContaniner =styled.div`
     }
 `;
 
-const SidebarPriceRangeSliderContainer =styled.div`
+const SidebarPriceRangeSliderContainer = styled.div`
 .MuiSlider-thumb{
   height:12px;
   color:darkgrey;

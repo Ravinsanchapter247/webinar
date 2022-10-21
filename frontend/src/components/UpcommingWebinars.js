@@ -1,350 +1,356 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux';
-import {addPage} from './features/pageSlice'
+import { addPage } from './features/pageSlice'
 import { selectActive } from './features/signInSlice';
-function UpcommingWebinars({page}) {
+import { useNavigate } from 'react-router-dom';
+function UpcommingWebinars({ page }) {
 
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
   //const [name,setName] =useState('')
-  useEffect( () =>{
+  useEffect(() => {
 
 
 
     dispatch(
 
       addPage({
-        name:page
+        name: page
       })
     )
   }
-  
- 
-  
+
+
+
   )
 
-  console.log('page:',page)
-  const active =useSelector(selectActive)
+  console.log('page:', page)
+  const active = useSelector(selectActive)
+  const navigate =useNavigate()
+
+  const handleClick = () => {
+    navigate('/description')
+  }
   return (
-    <Container style={{opacity:(active?0.3:1)}}>
-      
- 
-    <WebinarsContainer>
-      <HeaderContainer>
-    {/* <HomeIcon /> */}
-    </HeaderContainer>
-      <WebinarCardContainer>
-       
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+    <Container style={{ opacity: (active ? 0.3 : 1) }}>
+
+
+      <WebinarsContainer>
+        <HeaderContainer>
+          {/* <HomeIcon /> */}
+        </HeaderContainer>
+        <WebinarCardContainer>
+
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
 
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
        
        
     </WebinarsContainer> */}
-    
 
-    {/* <WebinarsContainer>
+
+          {/* <WebinarsContainer>
 
       <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        {/* </WebinarCardContainer>
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          {/* </WebinarCardContainer>
 
         <WebinarCardContainer> */}
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
 
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
 
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/land1.png' alt='' 
-           
-             style={{height:'130px', width:'100%'}}
-           />
-          </WebinarImage>
-          <Description>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </Description>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6>Comming Soon!</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-       
-       
+
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+          <WebinarCard>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+          <WebinarCard onClick={handleClick}>
+            <WebinarImage>
+              <img src='images/land1.png' alt=''
+
+                style={{ height: '130px', width: '100%' }}
+              />
+            </WebinarImage>
+            <Description>
+              <p>This land is in switzland and has total value of 100acrs</p>
+            </Description>
+            {/* <hr /> */}
+            <ImageInfo>
+              <p>$25.55</p>
+              <h6>Comming Soon!</h6>
+              <h6>Earn 25 reward points</h6>
+            </ImageInfo>
+          </WebinarCard>
+
+
         </WebinarCardContainer>
-       
-       
-    </WebinarsContainer>
-    
+
+
+      </WebinarsContainer>
+
     </Container>
   )
 }
 
 export default UpcommingWebinars
 
-const Container =styled.div`
+const Container = styled.div`
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -354,16 +360,16 @@ const Container =styled.div`
   
 `;
 
-const Contain =styled.div`
+const Contain = styled.div`
  margin-top:50px;
 `
 
-const HeaderContainer =styled.div`
+const HeaderContainer = styled.div`
    margin-top:50px;
    //padding-left:70px
 `;
 
-const WebinarsContainer=styled.div`
+const WebinarsContainer = styled.div`
  
    height:100vh;
    
@@ -389,7 +395,7 @@ const WebinarsContainer=styled.div`
  
 `
 
-const WebinarCardContainer =styled.div`
+const WebinarCardContainer = styled.div`
  
 //border-radius: 15px;
 //padding:25px;
@@ -404,7 +410,7 @@ display:grid;
 
 `;
 
-const WebinarCard =styled.div`
+const WebinarCard = styled.div`
 border:0.5px solid rgba(255,255,255,0.2);
 border-radius:3px;
 box-shadow:rgb(0 0 0 / 69%)0px 26px 30px -10px,
@@ -418,14 +424,14 @@ margin-bottom:20px;
 }
 `
 
-const WebinarImage =styled.div`
+const WebinarImage = styled.div`
  
 height:130px;
  width:100%
  
 `
 
-const Description =styled.div`
+const Description = styled.div`
 padding:12px;
  background-color:rgba(7, 8, 4,0.85);
  font-size:13px;
@@ -433,7 +439,7 @@ padding:12px;
  border-bottom:0.05px solid rgba(217, 217, 217,0.2);
 `
 
-const ImageInfo =styled.div` 
+const ImageInfo = styled.div` 
 background-color:rgba(7, 8, 4,0.85);
 padding:10px;
 //border-radius:3px;

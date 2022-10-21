@@ -5,15 +5,15 @@ import { borderLeft } from '@mui/system';
 function User() {
   return (
     <UserContainer>
-        ravinsan
-        <AccountCircleIcon />
-        </UserContainer>
+      ravinsan
+      <AccountCircleIcon />
+    </UserContainer>
   )
 }
 
 export default User
 
-const UserContainer=styled.div`
+const UserContainer = styled.div`
  display:flex;
  
  align-items:center;

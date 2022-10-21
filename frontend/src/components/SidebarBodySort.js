@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Select from 'react-select';
 import { margin } from '@mui/system';
@@ -12,10 +12,10 @@ const customStyles = {
     borderRadius: state.isFocused ? "3px 3px 0 0" : 3,
     borderColor: state.isFocused ? "lightgray" : "gray",
     boxShadow: state.isFocused ? null : null,
-    color:'white',
+    color: 'white',
     "&:hover": {
       borderColor: state.isFocused ? "black" : "gray"
-      
+
     }
   }),
   menu: (base) => ({
@@ -26,44 +26,44 @@ const customStyles = {
   menuList: (base) => ({
     ...base,
     padding: 0,
-    background:'black'
+    background: 'black'
   }),
 
   singleValue: (provided) => ({
     ...provided,
     color: 'white',
-    fontSize:'13px'
+    fontSize: '13px'
   }),
 
   option: provided => ({
     ...provided,
     color: 'white',
-    background:'black',
-    fontSize:'13px',
+    background: 'black',
+    fontSize: '13px',
 
-    "&:hover":{
-        background:'gray'
+    "&:hover": {
+      background: 'gray'
     }
   }),
 };
 
 const options = [
-    { value: 'Lowest quality first', label: 'Lowest quality first' },
-    { value: 'Highest quality first', label: 'Highest quality first' },
-    { value: 'normal quality first', label: 'normal quality first' },
-  ];
+  { value: 'Lowest quality first', label: 'Lowest quality first' },
+  { value: 'Highest quality first', label: 'Highest quality first' },
+  { value: 'normal quality first', label: 'normal quality first' },
+];
 function SidebarBodySort() {
-    const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <SidebarBodySortContainer>
-        <p>SORT BY </p>
-        <Select
-    defaultValue={selectedOption}
-    onChange={setSelectedOption}
-    options={options}
-    styles={customStyles}
-        />
-  </SidebarBodySortContainer>
+      <p>SORT BY </p>
+      <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        styles={customStyles}
+      />
+    </SidebarBodySortContainer>
   )
 }
 
@@ -80,5 +80,5 @@ margin-top:20px;
  font-size:13px;
 }
 `
-  
-;
+
+  ;

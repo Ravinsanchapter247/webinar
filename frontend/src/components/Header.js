@@ -49,10 +49,10 @@ function Header() {
   }
 
   const handleIconClick = (e) => {
-     e.preventDefault();
-     navigate('/main')
+    e.preventDefault();
+    navigate('/main')
 
-  
+
   }
   return (
     <HeaderContainer>

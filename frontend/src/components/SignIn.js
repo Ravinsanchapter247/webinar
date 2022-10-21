@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
-import {addPage} from './features/pageSlice'
+import { addPage } from './features/pageSlice'
 
 
 import AddIcon from '@mui/icons-material/Add';
@@ -13,80 +13,80 @@ import { addSignIn } from './features/signInSlice';
 import { useNavigate } from 'react-router-dom';
 
 
- 
-  //const [name,setName] =useState('')
- 
-function SignIn({page}) {
 
-  const dispatch =useDispatch();
+//const [name,setName] =useState('')
+
+function SignIn({ page }) {
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect( () =>{
+  useEffect(() => {
 
 
 
     dispatch(
 
       addPage({
-        name:page
+        name: page
       })
     )
   }
-  
- 
-  
+
+
+
   )
 
-  const handleClick = () =>{
+  const handleClick = () => {
 
     dispatch(
       addSignIn({
-        popup:false,
-        active:false
+        popup: false,
+        active: false
       })
     )
 
   }
 
-  const handleSignUp = () =>{
-     navigate('/registration');
-     console.log('Register');
+  const handleSignUp = () => {
+    navigate('/registration');
+    console.log('Register');
   }
   return (
-  
-    
-       <SubscripeContainer>
 
-<SubscripeMenu>
-<SubscripeHeader>
-   <img src='images/logo.jpg' alt='logo' />
-   <CloseImg onClick={handleClick}>
-   <img src='images/close.png' alt='close'style={{height:'30px',width:'30px'}} />
-   </CloseImg>
-</SubscripeHeader>
-<SubscripeBody>
-    <Email>
- <p>Email*</p> 
- <input type="email" name="email" placeholder="john@Example.com" />
- </Email>
 
- <Email>
-    <TextBox>
- <p style={{flex:1}}>password*</p> 
- <p>Forget Password?</p>
- </TextBox>
- <input type="password" name="email" placeholder="****" />
- </Email>
- <button>Login</button>
-</SubscripeBody>
-<SubscripeBottom >
-<p >Don't have an account?<span onClick={handleSignUp} >Sign Up</span></p>
- 
-</SubscripeBottom>
-</SubscripeMenu>
-</SubscripeContainer>
+    <SubscripeContainer>
 
-  
+      <SubscripeMenu>
+        <SubscripeHeader>
+          <img src='images/logo.jpg' alt='logo' />
+          <CloseImg onClick={handleClick}>
+            <img src='images/close.png' alt='close' style={{ height: '30px', width: '30px' }} />
+          </CloseImg>
+        </SubscripeHeader>
+        <SubscripeBody>
+          <Email>
+            <p>Email*</p>
+            <input type="email" name="email" placeholder="john@Example.com" />
+          </Email>
+
+          <Email>
+            <TextBox>
+              <p style={{ flex: 1 }}>password*</p>
+              <p>Forget Password?</p>
+            </TextBox>
+            <input type="password" name="email" placeholder="****" />
+          </Email>
+          <button>Login</button>
+        </SubscripeBody>
+        <SubscripeBottom >
+          <p >Don't have an account?<span onClick={handleSignUp} >Sign Up</span></p>
+
+        </SubscripeBottom>
+      </SubscripeMenu>
+    </SubscripeContainer>
+
+
 
 
   )
@@ -94,7 +94,7 @@ function SignIn({page}) {
 
 export default SignIn
 
-const SubscripeContainer=styled.div`
+const SubscripeContainer = styled.div`
     opacity:1;
   // height:50vh;
    // width:50vw;
@@ -106,7 +106,7 @@ const SubscripeContainer=styled.div`
  
 `
 
-const SubscripeMenu =styled.div`
+const SubscripeMenu = styled.div`
 height:400px;
 width:500px;
 background-color:white;
@@ -122,20 +122,20 @@ z-index:999;
 //place-items:center;
 `;
 
-const SubscripeHeader =styled.div`
+const SubscripeHeader = styled.div`
    padding:5px 150px;
    display:grid;
 place-items:center;
 border-bottom:1px solid lightgray;
 `;
 
-const CloseImg =styled.div`
+const CloseImg = styled.div`
   position:absolute;
   top:0;
   right:0;
 `;
 
-const SubscripeBody =styled.div`
+const SubscripeBody = styled.div`
 
     font-size:15px;
    // margin-top:10px;
@@ -166,7 +166,7 @@ const SubscripeBody =styled.div`
     
 `
 
-const Email =styled.div`
+const Email = styled.div`
   >input{
     width:400px;
     height:5px;
@@ -190,14 +190,14 @@ const Email =styled.div`
   margin-top:15px;
 `;
 
-const TextBox =styled.div`
+const TextBox = styled.div`
     display:flex;
     >p{
         font-family:Roboto;
     }
 `;
 
-const SubscripeBottom =styled.div`
+const SubscripeBottom = styled.div`
 
 display:flex;
 align-items:center;

@@ -42,7 +42,7 @@ function Registration({ page }) {
 
     const [isZoomed, setIsZoomed] = useState(false)
     const active = useSelector(selectActive)
-   const navigate= useNavigate()
+    const navigate = useNavigate()
 
     const handleZoomChange = useCallback(shouldZoom => {
         setIsZoomed(shouldZoom)
@@ -53,10 +53,10 @@ function Registration({ page }) {
     const handleClick = () => {
         dispatch(
             addSignIn({
-             popup:true,
-             active:true
+                popup: true,
+                active: true
             })
-          )
+        )
     }
     return (
         <Container style={{ opacity: (active ? 0.3 : 1) }} >

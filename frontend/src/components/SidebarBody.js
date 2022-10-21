@@ -6,54 +6,54 @@ import SidebarBodyStatus from './SidebarBodyStatus'
 
 function SidebarBody() {
 
-    const recentItem =(topic) =>{
-        return <SidebarBodyCategoryItems>
-            
-             <p>{topic}</p>
-         </SidebarBodyCategoryItems>
-     }
+  const recentItem = (topic) => {
+    return <SidebarBodyCategoryItems>
+
+      <p>{topic}</p>
+    </SidebarBodyCategoryItems>
+  }
   return (
     <SidebarBodyContainer>
-        
-        <p>Categories</p>
+
+      <p>Categories</p>
 
 
-        
-        <SidebarBodyCategoryOptions>
-           
-            {recentItem('Accessories')}
-            {recentItem('Ammunation')}
-            {recentItem('Firearms')}
-            {recentItem('Flamesthrowers')}
-            {recentItem('Knives')}
-            {recentItem('Optics')}
-            {recentItem('Packages')}
-            {recentItem('Vip')}
-          </SidebarBodyCategoryOptions>
 
-          {/* price rage slider */}
-            <SidebarBodyPriceRange />
+      <SidebarBodyCategoryOptions>
 
-          {/* //status */}
-          <SidebarBodyStatus />
+        {recentItem('Accessories')}
+        {recentItem('Ammunation')}
+        {recentItem('Firearms')}
+        {recentItem('Flamesthrowers')}
+        {recentItem('Knives')}
+        {recentItem('Optics')}
+        {recentItem('Packages')}
+        {recentItem('Vip')}
+      </SidebarBodyCategoryOptions>
 
-          
-          {/* //sortby */}
+      {/* price rage slider */}
+      <SidebarBodyPriceRange />
 
-          <SidebarBodySort /> 
+      {/* //status */}
+      <SidebarBodyStatus />
 
 
-          {/* //Manufactures */}
+      {/* //sortby */}
 
-        
-        </SidebarBodyContainer>
+      <SidebarBodySort />
+
+
+      {/* //Manufactures */}
+
+
+    </SidebarBodyContainer>
   )
 }
 
 export default SidebarBody
 
 
-const SidebarBodyContainer =styled.div`
+const SidebarBodyContainer = styled.div`
   margin-top:10px;
   padding:10px;
 
@@ -75,10 +75,10 @@ const SidebarBodyContainer =styled.div`
  
 `
 
-const SidebarBodyCategoryOptions =styled.div`
+const SidebarBodyCategoryOptions = styled.div`
     
 padding:5px;
- display:none;
+ //display:none;
 
 `;
 

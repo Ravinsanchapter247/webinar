@@ -8,19 +8,19 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 function Footer() {
 
-    const supportItems =(topic) =>{
-        return(
+  const supportItems = (topic) => {
+    return (
 
-            <p style={{marginBottom:'10px',marginLeft:'10px'}}>{topic}</p>
-        )
-    }
+      <p style={{ marginBottom: '10px', marginLeft: '10px' }}>{topic}</p>
+    )
+  }
   return (
     <FooterContainer>Footer
       <FooterBody>
         <FooterSupport>
           <h4>Support</h4>
-         {supportItems('FAQ')}
-        {supportItems('Terms and Conditions')}
+          {supportItems('FAQ')}
+          {supportItems('Terms and Conditions')}
           {supportItems('Privacy Policy')}
           {supportItems('Sweepstakes Rules')}
           {supportItems('DLD Rewards Program')}
@@ -28,49 +28,49 @@ function Footer() {
           {supportItems('DO NOT SELL MY DATA')}
         </FooterSupport>
         <FooterContacts>
-         <h4>Contacts</h4>
-         <Email>
-           <EmailIcon/>
-         {supportItems('admin@chapter247.com')}
-         </Email>
-         <TechnicalSupport>
-         <EmailIcon/>
-         {supportItems('Technical Support:technical@chapter247.com')}
-         </TechnicalSupport>
-         <PhoneContact>
+          <h4>Contacts</h4>
+          <Email>
+            <EmailIcon />
+            {supportItems('admin@chapter247.com')}
+          </Email>
+          <TechnicalSupport>
+            <EmailIcon />
+            {supportItems('Technical Support:technical@chapter247.com')}
+          </TechnicalSupport>
+          <PhoneContact>
             <PhoneIcon />
-         {supportItems('+91687334584')}
-         </PhoneContact>
-         <Location>
+            {supportItems('+91687334584')}
+          </PhoneContact>
+          <Location>
             <LocationOnIcon />
-           
+
             {supportItems('908, 9th Floor Apollo Premier Plot No.1 Scheme PU-4, Vijay Nagar, Indore, Madhya Pradesh 452010, India')}
-         </Location>
+          </Location>
         </FooterContacts>
       </FooterBody>
 
       <FooterBottom>
-<BottomLeft>
-<p>2022 © chapter247 All  Rights Reserved.</p>
-</BottomLeft>
-<BottomRight>
-<FacebookGroup>
-<p>Join our Facebook Group!</p>
-<FacebookIcon/>
-</FacebookGroup>
-<FacebookPage>
- <p>Follow our Facebook page!</p>
-   <img src="images/facebook.png" alt="Facebook"  style={{height:'20px'}}/>
-</FacebookPage>
-<FollowUs>
-<p>Follow us in</p>
-  <img src="images/instagram.png" alt="Instagram" style={{height:'20px'}}/>
-  <img src="images/twitter.png" alt="Twitter" style={{height:'25px'}}/>
-  <img src="images/youtube.png" alt="YouTube" style={{height:'25px'}}/>
-  <img src="images/reddit_user.png" alt="Reddit" style={{height:'25px'}}/>  
-  <img src="images/reddit_sub.png" alt="Reddit" style={{height:'25px'}}/>   
-</FollowUs>
-</BottomRight>
+        <BottomLeft>
+          <p>2022 © chapter247 All  Rights Reserved.</p>
+        </BottomLeft>
+        <BottomRight>
+          <FacebookGroup>
+            <p>Join our Facebook Group!</p>
+            <FacebookIcon />
+          </FacebookGroup>
+          <FacebookPage>
+            <p>Follow our Facebook page!</p>
+            <img src="images/facebook.png" alt="Facebook" style={{ height: '20px' }} />
+          </FacebookPage>
+          <FollowUs>
+            <p>Follow us in</p>
+            <img src="images/instagram.png" alt="Instagram" style={{ height: '20px' }} />
+            <img src="images/twitter.png" alt="Twitter" style={{ height: '25px' }} />
+            <img src="images/youtube.png" alt="YouTube" style={{ height: '25px' }} />
+            <img src="images/reddit_user.png" alt="Reddit" style={{ height: '25px' }} />
+            <img src="images/reddit_sub.png" alt="Reddit" style={{ height: '25px' }} />
+          </FollowUs>
+        </BottomRight>
       </FooterBottom>
 
     </FooterContainer>

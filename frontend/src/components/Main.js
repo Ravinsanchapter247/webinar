@@ -1,225 +1,981 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux';
-import {addPage} from './features/pageSlice'
+import { addPage } from './features/pageSlice'
 import { selectActive } from './features/signInSlice';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import Footer from './Footer';
 
 
 
-function Main({page}) {
+function Main({ page }) {
 
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
   //const [name,setName] =useState('')
-  useEffect( () =>{
+  useEffect(() => {
 
 
 
     dispatch(
 
       addPage({
-        name:page
+        name: page
       })
     )
   }
-  
- 
-  
+
+
+
   )
 
-  console.log('page:',page)
-  const active =useSelector(selectActive)
+  console.log('page:', page)
+  const active = useSelector(selectActive)
   return (
-    <Container style={{opacity:(active?0.3:1)}}>
-      
+    <Container style={{ opacity: (active ? 0.3 : 1) }}>
+
       <MainImageContainer>
-        <img src='/images/main.avif' alt='main image' style={{height:'600px',width:'100%',}} />
+        <img src='/images/main.avif' alt='main image' style={{ height: '600px', width: '100%', }} />
         <ShopContainer>
-         <p>Shop Firearms</p>
+          <p>Shop Firearms</p>
         </ShopContainer>
       </MainImageContainer>
 
       <CategoryContainer>
         <Category>
           <ImageContainer>
-            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+            <img src='/images/magazines.avif' alt='' style={{ height: '280px', width: '300px' }} />
           </ImageContainer>
           <h4>SHOP MAGAZINES</h4>
         </Category>
         <Category>
           <ImageContainer>
-            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+            <img src='/images/webinar.avif' alt='' style={{ height: '280px', width: '300px' }} />
           </ImageContainer>
-          <h4>SHOP MAGAZINES</h4>
+          <h4>SHOP WEBINARS</h4>
         </Category>
         <Category>
           <ImageContainer>
-            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+            <img src='/images/knives.avif' alt='' style={{ height: '280px', width: '300px' }} />
           </ImageContainer>
-          <h4>SHOP MAGAZINES</h4>
+          <h4>SHOP KNIVES</h4>
         </Category>
         <Category>
           <ImageContainer>
-            <img src='/images/magazines.avif' alt='' style={{height:'280px',width:'300px'}}/>
+            <img src='/images/ammo.avif' alt='' style={{ height: '280px', width: '300px' }} />
           </ImageContainer>
-          <h4>SHOP MAGAZINES</h4>
+          <h4>AMMO IN STOCK</h4>
         </Category>
       </CategoryContainer>
 
 
-       <h3>POPULAR PRODUCTS</h3>
+      <h3>POPULAR PRODUCTS</h3>
 
       <RelatedContainer>
-       <CardContainer>
-       <ScrollMenu >
-      <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-             style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-           style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        <WebinarCard>
-          <WebinarImage>
-           <img src='images/sub1.avif' alt='' 
-           
-            style={{height:'220px', width:'100%'}}
-           />
-          </WebinarImage>
-          <CardDescription>
-   <p>This land is in switzland and has total value of 100acrs</p>
-          </CardDescription>
-          {/* <hr /> */}
-          <ImageInfo>
-          <p>$25.55</p>
-          <h6><span>1</span> seats remaining</h6>
-          <h6>Earn 25 reward points</h6>
-          </ImageInfo>
-        </WebinarCard>
-        </ScrollMenu>
-       </CardContainer>
-       </RelatedContainer>
-   
-    
+        <CardHeader >
+          <CardTitle><p>Webinars</p></CardTitle>
+          <SubButton>
+            <p>ALL IN WEBINARS</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+      <RelatedContainer>
+        <CardHeader >
+          <CardTitle><p>shortguns</p></CardTitle>
+          <SubButton>
+            <p>ALL IN SHORTGUNS</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+
+      <RelatedContainer>
+        <CardHeader >
+          <CardTitle><p>Rifiles</p></CardTitle>
+          <SubButton>
+            <p>ALL IN RIFILES</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+
+      <RelatedContainer>
+        <CardHeader >
+          <CardTitle><p>Pistols</p></CardTitle>
+          <SubButton>
+            <p>ALL IN PISTOLS</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+      <RelatedContainer>
+        <CardHeader >
+          <CardTitle><p>wallets</p></CardTitle>
+          <SubButton>
+            <p>ALL IN  WALLETS</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+
+      <RelatedContainer>
+        <CardHeader >
+          <CardTitle><p>Knives</p></CardTitle>
+          <SubButton>
+            <p>ALL IN  KNIVES</p>
+          </SubButton>
+        </CardHeader>
+        <CardContainer>
+          <ScrollMenu >
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+            <WebinarCard>
+              <WebinarImage>
+                <img src='images/sub1.avif' alt=''
+
+                  style={{ height: '220px', width: '100%' }}
+                />
+              </WebinarImage>
+              <CardDescription>
+                <p>This land is in switzland and has total value of 100acrs</p>
+              </CardDescription>
+              {/* <hr /> */}
+              <ImageInfo>
+                <p>$25.55</p>
+                <h6><span>1</span> seats remaining</h6>
+                <h6>Earn 25 reward points</h6>
+              </ImageInfo>
+            </WebinarCard>
+          </ScrollMenu>
+        </CardContainer>
+      </RelatedContainer>
+
+      <Footer />
+
     </Container>
   )
 }
 
 export default Main
 
-const Container =styled.div`
+const Container = styled.div`
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -238,13 +994,13 @@ const Container =styled.div`
   
 `;
 
-const MainImageContainer =styled.div`
+const MainImageContainer = styled.div`
     width: 95%;
     padding:30px;
     position: relative;
 `;
 
-const ShopContainer =styled.div`
+const ShopContainer = styled.div`
   padding:8px;
   background-color:black;
   color:white;
@@ -290,7 +1046,7 @@ const Category = styled.div`
 const ImageContainer = styled.div`
 
 `;
-  
+
 
 const CardContainer = styled.div`
 display:flex;
@@ -367,7 +1123,7 @@ const RelatedContainer = styled.div`
     background-color:white;
      width:92vw;
      margin-left:30px;
-      margin-top:10px;
+      margin-top:30px;
       color:white;
       
       
@@ -375,4 +1131,33 @@ const RelatedContainer = styled.div`
         margin-bottom:15px;
         letter-spacing:1.5px;
       }
+    `;
+
+const CardHeader = styled.div`
+        display:flex;
+        color:black;
+        align-items:center;
+        flex:1;
+        position:relative;
+        
+       margin-bottom:20px;
+        
+       
+       
+    `;
+
+const SubButton = styled.div`
+        padding:10px;
+        background-color:black;
+        color:white;
+       position:absolute;
+       right:0;
+        
+    `;
+
+
+const CardTitle = styled.div`
+       font-size:30px;
+        
+    
     `;
