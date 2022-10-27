@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addPage } from './features/pageSlice'
 import { selectActive } from './features/signInSlice';
 import { useNavigate } from 'react-router-dom';
+import { selectActiveSubscripe } from './features/subscripeSlice';
+
+
 function UpcommingWebinars({ page }) {
 
   const dispatch = useDispatch();
@@ -26,13 +29,14 @@ function UpcommingWebinars({ page }) {
 
   console.log('page:', page)
   const active = useSelector(selectActive)
+  const activeSub = useSelector(selectActiveSubscripe)
   const navigate =useNavigate()
 
   const handleClick = () => {
     navigate('/description')
   }
   return (
-    <Container style={{ opacity: (active ? 0.3 : 1) }}>
+    <Container style={{ opacity: (active || activeSub ? 0.3 : 1) }}>
 
 
       <WebinarsContainer>
@@ -371,7 +375,7 @@ const HeaderContainer = styled.div`
 
 const WebinarsContainer = styled.div`
  
-   height:100vh;
+   //height:100vh;
    
  background-color:gray;
   

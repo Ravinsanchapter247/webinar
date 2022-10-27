@@ -76,7 +76,7 @@ function Header() {
             <User /> */}
         <Nav>
           <NavMenu>
-            <a href='/'>
+            <a href='/dashboard'>
               <span>Webinars</span>
             </a>
 
