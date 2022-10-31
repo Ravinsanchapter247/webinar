@@ -14,10 +14,22 @@ const userSchema =mongoose.Schema({
         required:[true,"Please add a email"],
         unique:true
     },
+
+    mobileNumber:{
+        type:String,
+        required:[true,"Please enter a mobile number"],
+        unique:true
+    },
+
     password:{
         type:String,
         required:[true,"Please add a password"]
     },
+
+    passwordConfirmation:{
+        type:String,
+        required:[true,"Please add a confirmation password"]
+    }
     
 
 },{timestamps:true})

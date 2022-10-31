@@ -13,11 +13,50 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import Switch from '@mui/material/Switch';
+import AddIcon from '@mui/icons-material/Add';
+import IconButton from '@mui/material/IconButton';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { createTheme } from "@material-ui/core/styles";
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+
+
+const theme = createTheme({
+  overrides: {
+    MuiTableCell: {
+      root: {
+
+        paddingTop: 4,
+        paddingBottom: 4,
+        "&:last-child": {
+          paddingRight: 5
+        }
+      }
+    }
+  }
+});
 //import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 
-function UserDashboard({ page}) {
 
-    const dispatch = useDispatch();
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  // createData('Eclair', 262, 16.0, 24, 6.0),
+  // createData('Cupcake', 305, 3.7, 67, 4.3),
+  // createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+function UserDashboard({ page }) {
+
+  const dispatch = useDispatch();
   //const [name,setName] =useState('')
   useEffect(() => {
 
@@ -32,27 +71,27 @@ function UserDashboard({ page}) {
   })
   return (
     <UserDashboardContainer>
-        <SiderbarDashboard>
-            <SidebarHeader>
-               <p>My Account</p>
-            </SidebarHeader>
-            <SidebarBody>
-              <SidebarOptions Icon={GridViewIcon} title='Dashboard' />
-              <SidebarOptions Icon={ShoppingBagIcon} title='My Orders' />
-              <SidebarOptions Icon={MonitorIcon} title='My Webinars' />
-              <SidebarOptions Icon={CardGiftcardIcon} title='My GiftCards' />
-              <SidebarOptions Icon={PersonIcon} title='My Profile' />
-              <SidebarOptions Icon={LockIcon} title='Change Password' />
+      <SiderbarDashboard>
+        <SidebarHeader>
+          <p>My Account</p>
+        </SidebarHeader>
+        <SidebarBody>
+          <SidebarOptions Icon={GridViewIcon} title='Dashboard' />
+          <SidebarOptions Icon={ShoppingBagIcon} title='My Orders' />
+          <SidebarOptions Icon={MonitorIcon} title='My Webinars' />
+          <SidebarOptions Icon={CardGiftcardIcon} title='My GiftCards' />
+          <SidebarOptions Icon={PersonIcon} title='My Profile' />
+          <SidebarOptions Icon={LockIcon} title='Change Password' />
 
-              
-            </SidebarBody>
 
-        </SiderbarDashboard>
-        <UserDashboardBody>
+        </SidebarBody>
+
+      </SiderbarDashboard>
+      <UserDashboardBody>
 
         {/* dashboard */}
 
-          {/* <DashboardContainer>
+        {/* <DashboardContainer>
             <AccountImage>
               <ImageContainer>
               <AccountCircleIcon />
@@ -88,12 +127,12 @@ function UserDashboard({ page}) {
            </WebinarActivity> */}
 
 
-           {/* dashboard */}
+        {/* dashboard */}
 
-           {/* orders */}
+        {/* orders */}
 
-       
-       {/* <OrdersContainer>
+
+        {/* <OrdersContainer>
         <OrdersHeader>
           <ShoppingBagIcon/>
           <p>My Orders</p>
@@ -494,11 +533,11 @@ function UserDashboard({ page}) {
         </ProfileContainer> */}
 
         {/* profile */}
-          
 
-          {/* change password */}
 
-          {/* <PasswordContainer>
+        {/* change password */}
+
+        {/* <PasswordContainer>
             <ProfileHeader>
               <LockIcon/>
               <p>Change Password</p>
@@ -605,21 +644,84 @@ function UserDashboard({ page}) {
           </PasswordContainer> */}
 
 
-            {/* change password */}
+        {/* change password */}
 
 
-            {/* my giftcard  */}
+        {/* my giftcard  */}
 
-            <GiftcardContainer>
-            <ProfileHeader>
-              <CardGiftcardIcon />
-              <p>My Gift Cards</p>
-            </ProfileHeader>
-            </GiftcardContainer>
+        <GiftcardContainer>
+          <ProfileHeader>
+            <CardGiftcardIcon />
+            <p>My Gift Cards</p>
+          </ProfileHeader>
+          <GiftcardBody>
+            <input type='text' name='amount' placeholder='Enter a new card code ' />
+            <IconButton
 
-          
+              sx={{
+                width: '35px',
+                height: '25px',
+                borderRadius: 0,
+                border: "1px solid",
+                borderColor: "white",
+                marginLeft: "10px",
+                backgroundColor: "white",
+              }}
 
-        </UserDashboardBody>
+            >
+              <AddIcon sx={{ fontSize: "20px", color: 'black' }} />
+            </IconButton>
+
+          </GiftcardBody>
+          <MuiThemeProvider theme={theme}>
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 650, backgroundColor: 'black', fontSize: '25px' }} size="small" aria-label="a dense table">
+                <TableHead   >
+                  <TableRow sx={{
+                    // backgroundColor: "yellow",
+
+                    "& th": {
+                      fontSize: "1rem",
+                      color: "rgba(96, 96, 96)"
+                    }
+                  }}>
+                    <TableCell >Dessert (100g serving)</TableCell>
+                    <TableCell align="right">Calories</TableCell>
+                    <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                    <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+                    <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody sx={{
+                  padding: "0px 0px",
+                  borderRight: "2px solid black",
+                  backgroundColor: "black",
+                  fontSize: "1.1rem",
+                  color: "white",
+                }}>
+                  {rows.map((row) => (
+                    <TableRow
+                      key={row.name}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component="th" scope="row">
+                        {row.name}
+                      </TableCell>
+                      <TableCell align="right">{row.calories}</TableCell>
+                      <TableCell align="right">{row.fat}</TableCell>
+                      <TableCell align="right">{row.carbs}</TableCell>
+                      <TableCell align="right">{row.protein}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </MuiThemeProvider>
+        </GiftcardContainer>
+
+
+
+      </UserDashboardBody>
     </UserDashboardContainer>
   )
 }
@@ -707,7 +809,7 @@ const RewardsPoints = styled.div`
    align-items:center;
 `;
 
-const GiftcardDetails= styled.div`
+const GiftcardDetails = styled.div`
  >.MuiSvgIcon-root{
   color:white;
   font-size:40px;
@@ -716,7 +818,7 @@ const GiftcardDetails= styled.div`
  display:flex;
 `;
 
-const WebinarActivity= styled.div`
+const WebinarActivity = styled.div`
 padding:20px;
 background-color:black;
 margin-left:20px;
@@ -747,7 +849,7 @@ width:77vw;
 }
 `;
 
-const OrdersBody= styled.div`
+const OrdersBody = styled.div`
     padding:20px;
     background-color:black;
     margin-top:20px;
@@ -769,20 +871,20 @@ const OrdersBodyHeader = styled.div`
 `;
 
 
-const WebinarsContainer =styled.div`
+const WebinarsContainer = styled.div`
 margin-left:20px;
 `;
 
-const WebinarHeader =styled.div`
+const WebinarHeader = styled.div`
 
 `;
 
 
-const WebinarBody =styled.div`
+const WebinarBody = styled.div`
 
 `;
 
-const CurrentWebinars =styled.div`
+const CurrentWebinars = styled.div`
    display:flex;
    padding:10px;
    background-color:lightgray;
@@ -793,7 +895,7 @@ const CurrentWebinars =styled.div`
    }
 `;
 
-const PreviousWebinars =styled.div`
+const PreviousWebinars = styled.div`
 display:flex;
 padding:10px;
 background-color:lightgray;
@@ -804,7 +906,7 @@ color:white;
  }
 `;
 
-const ProfileContainer =styled.div`
+const ProfileContainer = styled.div`
 margin-left:20px;
 background-color:black;
 width:77vw;
@@ -834,7 +936,7 @@ button:nth-of-type(2) {
 
 `;
 
-const ProfileHeader =styled.div`
+const ProfileHeader = styled.div`
   display:flex;
   align-items:center;
   color:white;
@@ -849,11 +951,11 @@ const ProfileHeader =styled.div`
   
 `
 
-const ProfileBody =styled.div`
+const ProfileBody = styled.div`
    padding:20px;
 `;
 
-const Content =styled.div`
+const Content = styled.div`
  display:flex;
 `;
 
@@ -871,7 +973,7 @@ const PreferredMethod = styled.div`
 `;
 
 
-const PasswordContainer =styled.div`
+const PasswordContainer = styled.div`
 color:white;
 background-color:black;
 margin-left:30px;
@@ -894,10 +996,49 @@ const PasswordBody = styled.div`
   }
 `;
 
-const GiftcardContainer =styled.div`
+const GiftcardContainer = styled.div`
 color:white;
 background-color:black;
 margin-left:30px;
 width:77vw;
+
+// >.MuiTable-root{
+//   background-color:black;
+//   color:white;
+//   font-size:20px;
+  
+//  }
 `;
 
+const GiftcardBody = styled.div`
+
+padding:10px;
+display:flex;
+align-items:center;
+margin-left:10px;
+margin-top:10px;
+// display:grid;
+//      place-items:center;
+
+ >input{
+  padding:5px 60px;
+  text-align:start;
+  font-size:15px;
+  color:#A8A2A4;
+  background-color:black;
+  border:0.05px solid rgba(217, 217, 217,0.3);
+ }
+
+
+
+ >.MuiIconButton-root{
+  padding:7px;
+  
+ background-color:white;
+ &:hover{
+  background-color:gray;
+ }
+ }
+
+ 
+`

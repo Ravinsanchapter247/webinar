@@ -54,6 +54,17 @@ function Header() {
 
 
   }
+
+  const handleOnclickUpcomming = (e) => { 
+    e.preventDefault();
+    navigate('/upcommingwebinars')
+  }
+
+  const handleOnclickGiftcard = (e) => { 
+    e.preventDefault();
+    navigate('/giftcards')
+  }
+  
   return (
     <HeaderContainer>
       <HeaderLeft onClick={handleIconClick}>
@@ -76,21 +87,23 @@ function Header() {
             <User /> */}
         <Nav>
           <NavMenu>
-            <a href='/dashboard'>
+            <a href='/'>
               <span>Webinars</span>
             </a>
-
+           <div onClick={handleOnclickUpcomming}>
             <a href='/upcommingwebinars'>
               <span>Upcomming Webinars</span>
             </a>
+
+            </div>
             {/* <a href='/products'>
            <span>Products</span>
            </a> */}
-
+           <div onClick={handleOnclickGiftcard}>
             <a href='/giftCards'>
               <span>Gift Cards</span>
             </a>
-
+            </div>
             <div onClick={handleClick}>
               <a href='#' >
                 <span>Subscripe</span>

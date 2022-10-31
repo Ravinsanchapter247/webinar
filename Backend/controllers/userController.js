@@ -35,9 +35,10 @@ const loginUser = asyncHandler(async (req, res) => {
 
 const registerUser = asyncHandler(async (req, res) => {
 
-    const { name, email, password } = req.body
+    const { name, email, password,mobileNumber,passwordConfirmation } = req.body
+    console.log(req.body)
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !passwordConfirmation || !mobileNumber) {
 
         res.status(400).json({ message: 'Please enter all fields' })
 
@@ -53,10 +54,10 @@ const registerUser = asyncHandler(async (req, res) => {
     const hash = await bcrypt.hash(password,salt)
 
 
-    const user = await User.create({ email, password: hash, name })
+    const user = await User.create({ email, password: hash, name,passwordConfirmation,mobileNumber })
 
     if (user) {
-        res.status(201).json({ name: user.name, email: user.email, _id: user.id, token: createToken(user._id) })
+        res.status(201).json({ name: user.name, email: user.email,passwordConfirmation:user.passwordConfirmation,mobileNumber:user.mobileNumber, _id: user.id, token: createToken(user._id) })
     } else {
         res.status(400).json({ message: 'Invalid user data' })
     }

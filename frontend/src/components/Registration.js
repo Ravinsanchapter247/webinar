@@ -16,6 +16,7 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import PersonIcon from '@mui/icons-material/Person';
 import Switch from '@mui/material/Switch';
 import { useNavigate } from 'react-router-dom';
+import { register } from './features/userSlice';
 
 
 
@@ -23,6 +24,25 @@ const props = { width: 400, height: 250, zoomWidth: 500, img: "images/descriptio
 function Registration({ page }) {
 
     const dispatch = useDispatch();
+
+    const [userData,setUserData] =useState({
+        firstName:'',
+        lastName:'',
+        password:'',
+        mobileNumber:'',
+        email:'',
+        passwordConfirmation:'',
+    })
+
+    const {firstName,lastName,email,password,mobileNumber,passwordConfirmation} =userData;
+    const {user,isLoading,isError,isSuccess,message} =useSelector(state => state.auth);
+    const onChange = (e) =>{ setUserData((prevState) =>({
+        ...prevState,
+        [e.target.name]:e.target.value
+    }))
+
+}
+
     //const [name,setName] =useState('')
     useEffect(() => {
 
@@ -37,7 +57,7 @@ function Registration({ page }) {
     }
 
 
-
+,
     )
 
     const [isZoomed, setIsZoomed] = useState(false)
@@ -58,6 +78,26 @@ function Registration({ page }) {
             })
         )
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+         console.log('form submitted')
+        if(password===passwordConfirmation){
+            const userData ={
+                firstName,
+                lastName,
+                email,
+                mobileNumber,
+                password,
+                passwordConfirmation,
+            }
+
+            dispatch(register(userData))
+
+            console.log(userData)
+        }
+
+    }
     return (
         <Container style={{ opacity: (active ? 0.3 : 1) }} >
             <HeaderContainer>
@@ -76,21 +116,21 @@ function Registration({ page }) {
                 <Name>
                     <FirstName>
                         <label>FIRST NAME<span>*</span></label>
-                        <input type="text" name="firstName" placeholder='john' />
+                        <input type="text" name="firstName" placeholder='john' onChange={onChange}/>
                     </FirstName>
                     <LastName>
                         <label>LAST NAME<span>*</span></label>
-                        <input type="text" name="firstName" placeholder='Doe' />
+                        <input type="text" name="lastName" placeholder='Doe' onChange={onChange} />
                     </LastName>
                 </Name>
                 <Email>
                     <label>EMAIL<span>*</span></label>
-                    <input type="text" name="email" placeholder='john@doe.com' />
+                    <input type="text" name="email" placeholder='john@doe.com'  onChange={onChange}/>
                 </Email>
 
                 <Email>
                     <label>MOBILE NUMBER<span>*</span></label>
-                    <input type="number" name="email" placeholder='(xxxx xxxx-xxxx)' />
+                    <input type="number" name="mobileNumber" placeholder='(xxxx xxxx-xxxx)' onChange={onChange} />
                 </Email>
 
                 <Methode>
@@ -108,18 +148,18 @@ function Registration({ page }) {
                     <p>*Password must be at least 10 characters long and must include a lowercase letter, an uppercase letter, a number, and a special character.</p>
                     <Email style={{ marginTop: '10px' }}>
                         <label>PASSWORD<span>*</span></label>
-                        <input type="password" name="email" placeholder='****' />
+                        <input type="password" name="password" placeholder='****' onChange={onChange}/>
                     </Email>
 
                     <Email>
 
                         <label>CONFIRM PASSWORD<span>*</span></label>
-                        <input type="password" name="email" placeholder='****' />
+                        <input type="password" name="passworConfirmation" placeholder='****' onChange={onChange}/>
                     </Email>
                 </Password>
 
                 <Bottom>
-                    <button>Create Account</button>
+                    <button onClick={handleSubmit}>Create Account</button>
                     <p >Do you have an account?<span onClick={handleClick}>Log In</span></p>
 
                 </Bottom>
@@ -338,6 +378,7 @@ const Bottom = styled.div`
         font-size:15px;
         
         border:1px solid #DEE2E6;
+        
     }
 
    
