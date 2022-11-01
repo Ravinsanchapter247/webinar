@@ -5,6 +5,7 @@ import authService from './userSlice';
 // get user from local storage
  const user = JSON.parse(localStorage.getItem('user'))
 
+
 const initialState={
     user:user ? user : null,
     isError:false,
@@ -17,6 +18,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (user, thunkAPI) => {
     try {
+        console.log('user:',user)
       return await authService.register(user)
     } catch (error) {
       const message =

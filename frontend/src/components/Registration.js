@@ -82,7 +82,7 @@ function Registration({ page }) {
     const handleSubmit = (e) => {
         e.preventDefault();
          console.log('form submitted')
-        if(password===passwordConfirmation){
+        
             const userData ={
                 firstName,
                 lastName,
@@ -94,8 +94,8 @@ function Registration({ page }) {
 
             dispatch(register(userData))
 
-            console.log(userData)
-        }
+            console.log('user data:',userData)
+        
 
     }
     return (
@@ -116,7 +116,7 @@ function Registration({ page }) {
                 <Name>
                     <FirstName>
                         <label>FIRST NAME<span>*</span></label>
-                        <input type="text" name="firstName" placeholder='john' onChange={onChange}/>
+                        <input type="text" name="firstName" placeholder='john'value={firstName} onChange={onChange}/>
                     </FirstName>
                     <LastName>
                         <label>LAST NAME<span>*</span></label>
@@ -258,12 +258,13 @@ const FirstName = styled.div`
         color:red;
       }
       >input{
+        
         height:30px;
         width:400px;
         margin-top:10px;
         border-radius:2px;
         border:1px solid #DEE2E6;
-
+          
         ::placeholder{
             padding-left:20px;
         }
@@ -295,7 +296,7 @@ const LastName = styled.div`
         margin-top:10px;
         border-radius:2px;
         border:1px solid #DEE2E6;
-
+         
         ::placeholder{
             padding-left:20px;
         }

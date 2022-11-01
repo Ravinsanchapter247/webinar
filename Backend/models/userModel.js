@@ -7,7 +7,8 @@ const userSchema =mongoose.Schema({
     
     name:{
         type:String,
-        required:[true,"Please add a name"]
+        required:[true,"Please add a name"],
+
     },
     email:{
         type:String,
@@ -18,7 +19,7 @@ const userSchema =mongoose.Schema({
     mobileNumber:{
         type:String,
         required:[true,"Please enter a mobile number"],
-        unique:true
+        
     },
 
     password:{
