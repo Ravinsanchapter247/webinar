@@ -128,7 +128,7 @@ export default Header
 const HeaderContainer = styled.div`
 background-color:black;
     display:flex;
-   position:fixed;
+   position:scroll;
    width:100%;
    align-items:center;
     

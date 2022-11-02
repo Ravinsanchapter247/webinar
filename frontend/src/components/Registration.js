@@ -95,6 +95,8 @@ function Registration({ page }) {
             dispatch(register(userData))
 
             console.log('user data:',userData)
+            console.log(passwordConfirmation,'password confirmation')
+            navigate('/main')
         
 
     }
@@ -154,7 +156,7 @@ function Registration({ page }) {
                     <Email>
 
                         <label>CONFIRM PASSWORD<span>*</span></label>
-                        <input type="password" name="passworConfirmation" placeholder='****' onChange={onChange}/>
+                        <input type="password" name="passwordConfirmation" placeholder='****' onChange={onChange}/>
                     </Email>
                 </Password>
 
@@ -264,7 +266,7 @@ const FirstName = styled.div`
         margin-top:10px;
         border-radius:2px;
         border:1px solid #DEE2E6;
-          
+         
         ::placeholder{
             padding-left:20px;
         }
